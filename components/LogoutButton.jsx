@@ -1,20 +1,22 @@
-"use client"
+"use client";
 
-import { logoutUser } from '@/auth-actions/logoutUser';
-import React from 'react'
+import { logoutUser } from "@/auth-actions/logoutUser";
+import { ArrowLeftOnRectangleIcon } from "@heroicons/react/20/solid";
+import React from "react";
 
 const LogoutButton = () => {
-  const handleLogoutUser = async () =>{
-    await logoutUser()
-  }
-    return (
+  const handleLogoutUser = async () => {
+    await logoutUser();
+  };
+  return (
     <button
-        onClick={handleLogoutUser}
-        className="mt-auto text-white bg-red-400 text-xl w-full px-3 py-5"
+      onClick={handleLogoutUser}
+      className="mt-auto flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-flush-orange-400 hover:text-white"
     >
-        Log Out
+      <ArrowLeftOnRectangleIcon width={24} />
+      Log Out
     </button>
-  )
-}
+  );
+};
 
-export default LogoutButton
+export default LogoutButton;
