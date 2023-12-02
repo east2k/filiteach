@@ -7,15 +7,14 @@ import PartnerComponent from "@/components/LandingPage/PartnerComponent";
 import PricingComponent from "@/components/LandingPage/PricingComponent";
 
 export default async function Home() {
-
-    return (
-        <div className="pt-28">
-            <BannerComponent />
-            <DiscoverComponent />
-            <FeaturesComponent />
-            <PricingComponent />
-            <PartnerComponent />
-            <LearnMoreComponent />
-        </div>
-    );
+  return (
+    <div>
+      <BannerComponent />
+      <DiscoverComponent />
+      <FeaturesComponent />
+      <PricingComponent />
+      <PartnerComponent />
+      <LearnMoreComponent />
+    </div>
+  );
 }
