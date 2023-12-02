@@ -1,8 +1,15 @@
+import readUserSession from "@/auth-actions/readUserSession";
 import { RegisterForm } from "@/components/RegisterForm";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
-const Login = () => {
+const Register = async () => {
+    const { data } = await readUserSession();
+    if (data.session) {
+        return redirect("/learning");
+    }
+
     return (
         <section className="bg-gradient-to-t from-white via-purple-200 to-white">
             <div className="max-w-screen-2xl m-auto flex justify-center items-center px-12 py-52 mt-auto">
@@ -30,4 +37,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

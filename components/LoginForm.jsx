@@ -3,34 +3,49 @@
 import { useFormValidation } from "@/hooks/useFormValidation";
 
 export const LoginForm = () => {
-    const { values, errors, isSubmitting, handleFormChange, handleFormSubmit } =
-        useFormValidation(
-            {
-                username: "",
-                password: "",
-            },
-            "login"
-        );
+    const {
+        values,
+        errors,
+        submit,
+        handleFormChange,
+        handleFormSubmit,
+    } = useFormValidation(
+        {
+            email: "",
+            password: "",
+        },
+        "login"
+    );
+
     return (
         <form className="flex flex-col" onSubmit={handleFormSubmit}>
+            {errors.formError && (
+                <p className="text-red-400 mb-4 text-center">
+                    {errors.formError}
+                </p>
+            )}
+            {!errors.formError && submit && (
+                <p className="text-green-500 mb-4 text-center">
+                    Register Successful
+                </p>
+            )}
             <div className="flex flex-col mb-4">
                 <h2 className="mb-1 text-sm text-zinc-500 font-medium">
-                    Username
+                    Email
                 </h2>
                 <input
                     className={`border rounded-md px-2 py-1 ${
-                        errors.username && "border-red-300"
+                        errors.email && "border-red-300"
                     }`}
-                    id="username"
-                    name="username"
+                    id="email"
+                    name="email"
                     placeholder="Enter here"
-                    type="text"
+                    type="email"
+                    value={values.email}
                     onChange={handleFormChange}
                 />
-                {errors.username && (
-                    <p className="text-sm text-red-400 px-2">
-                        {errors.username}
-                    </p>
+                {errors.email && (
+                    <p className="text-sm text-red-400 px-2">{errors.email}</p>
                 )}
             </div>
             <div className="flex flex-col mb-4">
@@ -45,6 +60,7 @@ export const LoginForm = () => {
                     name="password"
                     placeholder="Enter 5 characters or more"
                     type="password"
+                    value={values.password}
                     onChange={handleFormChange}
                 />
                 {errors.password && (
