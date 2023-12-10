@@ -23,16 +23,21 @@ const subjectList = [
     },
 ];
 
-export const SubjectRadio = () => {
+export const SubjectRadio = ({ values, handleDetailsFormChange }) => {
     return (
         <div className="flex flex-row items-center justify-evenly">
             {subjectList.map((item, index) => {
                 return (
-                    <div key={index} className="flex flex-row items-center hover:bg-zinc-100 px-2 py-1 rounded-full">
+                    <div
+                        key={index}
+                        className="flex flex-row items-center hover:bg-zinc-100 px-2 py-1 rounded-full"
+                    >
                         <input
                             id={item.value}
                             value={item.value}
                             name="subject"
+                            checked={item.value === values.subject}
+                            onChange={handleDetailsFormChange}
                             type="radio"
                         />
                         <label htmlFor={item.value} className="ml-1 text-sm">
@@ -41,9 +46,10 @@ export const SubjectRadio = () => {
                         {item.value === "others" && (
                             <input
                                 className="text-sm ml-5 border outline-none py-2 px-3 rounded-md"
-                                id="title"
-                                name="title"
+                                id="subject"
+                                name="subject"
                                 type="text"
+                                disabled={values.subject !== "others"}
                                 placeholder="Specify here..."
                             />
                         )}

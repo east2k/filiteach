@@ -55,7 +55,7 @@ export const teachLinks = [
   },
   {
     name: "My Courses",
-    link: "/learning/courses",
+    link: "/learning/my-courses",
     icon: FolderIcon,
   },
   {

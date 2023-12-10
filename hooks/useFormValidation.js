@@ -87,7 +87,6 @@ export const useFormValidation = (initialState, type) => {
 
     const handleLoginUser = async () => {
         const result = await loginUser(values);
-        console.log(result);
         const { error } = JSON.parse(result);
 
         if (error?.message) {

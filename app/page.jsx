@@ -5,8 +5,13 @@ import FeaturesComponent from "@/components/LandingPage/FeaturesComponent";
 import LearnMoreComponent from "@/components/LandingPage/LearnMoreComponent";
 import PartnerComponent from "@/components/LandingPage/PartnerComponent";
 import PricingComponent from "@/components/LandingPage/PricingComponent";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
+    const { data } = await readUserSession();
+    if (data.session) {
+      return redirect("/learning");
+    }
   return (
     <div>
       <BannerComponent />

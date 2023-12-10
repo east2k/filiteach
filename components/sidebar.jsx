@@ -14,6 +14,8 @@ const SideBar = async () => {
       <div className="px-1">
         <Logo />
       </div>
+      <div className="border mt-10">Name: {user.first_name} {user.last_name}</div>
+      <div className="border capitalize">Role: {user.role}</div>
       <Links links={user.role === "student" ? studentLinks : teachLinks} />
       <div className="mt-auto flex flex-col ">
         <Link
