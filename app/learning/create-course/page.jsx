@@ -1,9 +1,14 @@
 import { CreateCourseContainer } from "@/components/CreateCourseComponents/CreateCourseContainer";
 import { useGetUser } from "@/hooks/useGetUser";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const CreateCourse = async () => {
     const user = await useGetUser();
+    if (user.role !== "teacher") {
+      return redirect("/learning");
+    }
+
     return (
         <div className="p-5">
             <div className="pb-5 border-b">
