@@ -1,6 +1,7 @@
 "use client";
 
 import {
+    PlayIcon,
     QuestionMarkCircleIcon,
     RocketLaunchIcon,
 } from "@heroicons/react/20/solid";
@@ -131,7 +132,14 @@ export const ChatSearch = () => {
                                     {question}
                                 </h1>
                             </div>
-                            {isLoading ? <h1>Loading...</h1> : <p>{answer}</p>}
+                            {isLoading ? (
+                                <div className="flex flex-row items-center">
+                                    <PlayIcon className="w-3 h-3 animate-spin" />
+                                    <h1>Loading...</h1>
+                                </div>
+                            ) : (
+                                <p>{answer}</p>
+                            )}
                         </div>
                     );
                 })}
