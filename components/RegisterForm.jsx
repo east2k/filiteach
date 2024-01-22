@@ -170,7 +170,7 @@ export const RegisterForm = () => {
       {errors.matchingUser && (
         <p className="text-center text-red-400">{errors.matchingUser}</p>
       )}
-      <button className="bg-flush-orange-400 text-white px-5 py-2 rounded-md">
+      <button className="bg-mantis-400 text-white px-5 py-2 rounded-md">
         Register
       </button>
     </form>

@@ -8,7 +8,7 @@ const PartnerComponent = () => {
   return (
     <section className="bg-shark-50">
       <div className="flex flex-col justify-between max-w-screen-2xl m-auto p-12">
-        <h1 className="text-6xl text-center font-bold border-b border-b-flush-orange-500 mb-7 mx-auto">
+        <h1 className="text-6xl text-center font-bold border-b border-b-mantis-500 mb-7 mx-auto">
           In Partnership With
         </h1>
         <div className="flex flex-col">
@@ -45,7 +45,7 @@ const PartnerComponent = () => {
                     <h2 className="text-xl font-medium text-center">
                       {item.name}
                     </h2>
-                    <p className="text-flush-orange-500 mb-3 text-center leading-5">
+                    <p className="text-mantis-500 mb-3 text-center leading-5">
                       Focus in: <br />
                       {item.focusList}
                     </p>

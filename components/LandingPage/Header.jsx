@@ -12,14 +12,14 @@ export const Header = () => {
       <div className="flex flex-row gap-5 ml-auto">
         <Link
           href="/login"
-          className="flex justify-center gap-1 items-center hover:text-600 hover:text-flush-orange-500"
+          className="flex justify-center gap-1 items-center hover:text-600 hover:text-mantis-500"
         >
           Login
           <ArrowRightOnRectangleIcon height={20} />
         </Link>
         <Link
           href="/register"
-          className="flex justify-center items-center  bg-shark-900 hover:bg-flush-orange-500 text-lg text-white rounded-full h-9.5 px-4"
+          className="flex justify-center items-center  bg-shark-900 hover:bg-mantis-500 text-lg text-white rounded-full h-9.5 px-4"
         >
           Sign Up
         </Link>

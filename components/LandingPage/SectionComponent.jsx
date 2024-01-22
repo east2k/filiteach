@@ -9,7 +9,7 @@
 //     return (
 //         <section className="">
 //             <div className="flex flex-col items-center max-w-screen-2xl m-auto p-12">
-//                 <h1 className="text-6xl text-center font-bold border-b border-b-flush-orange-500 w-fit mb-7">
+//                 <h1 className="text-6xl text-center font-bold border-b border-b-mantis-500 w-fit mb-7">
 //                     What do we teach?
 //                 </h1>
 //                 <div

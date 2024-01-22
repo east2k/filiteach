@@ -11,7 +11,7 @@ const Login = async () => {
   }
 
   return (
-    <section className="bg-gradient-to-t from-white via-flush-orange-200 to-white">
+    <section className="bg-gradient-to-t from-white via-mantis-200 to-white">
       <div className="max-w-screen-2xl m-auto flex justify-center items-center px-12 py-52 mt-auto">
         <div className="w-1/2">
           <h1 className="text-5xl tracking-wider text-center px-1 py-5 bg-white rounded-md">
@@ -27,7 +27,7 @@ const Login = async () => {
             <div className="text-xs mt-5 flex flex-row justify-center">
               <p>
                 Do not have an account yet?
-                <Link className="ml-1 text-flush-orange-500" href="/register">
+                <Link className="ml-1 text-mantis-500" href="/register">
                   Sign Up
                 </Link>
               </p>

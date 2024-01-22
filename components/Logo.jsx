@@ -4,7 +4,7 @@ const Logo = () => (
   <div className="flex flex-row gap-2 items-center font-bold text-2xl">
     <Image
       className="h-full"
-      src="/assets/images/logo.png"
+      src="/assets/images/filiteach-logo-green.png"
       alt="FiliTeach logo"
       width={32}
       height={40}

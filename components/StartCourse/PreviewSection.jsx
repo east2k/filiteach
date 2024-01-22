@@ -20,7 +20,7 @@ export const PreviewSection = ({ thumbnail, summary, runtime, status }) => {
                     <p className="mt-auto">Runtime: {runtime} mins</p>
                     <p>Current Status</p>
                     <div
-                        className={`rounded-full w-28 border border-flush-orange-200 ${
+                        className={`rounded-full w-28 border border-mantis-200 ${
                             status ? "bg-green-500" : "bg-red-400"
                         }`}
                     >

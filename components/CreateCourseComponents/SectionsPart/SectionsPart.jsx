@@ -39,9 +39,9 @@ export const SectionsPart = ({
                 })}
                 <div
                     onClick={handleShowOptions}
-                    className="cursor-pointer flex flex-col items-center justify-center border border-flush-orange-500 px-2 py-4 rounded-lg"
+                    className="cursor-pointer flex flex-col items-center justify-center border border-mantis-500 px-2 py-4 rounded-lg"
                 >
-                    <PlusCircleIcon className="text-flush-orange-500 w-5" />
+                    <PlusCircleIcon className="text-mantis-500 w-5" />
                     <p>Add chapter</p>
                 </div>
             </div>
@@ -53,10 +53,10 @@ export const SectionsPart = ({
                     <div className="flex flex-row justify-center gap-7">
                         <div
                             onClick={() => handleActiveSection("video")}
-                            className="cursor-pointer border border-flush-orange-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/4"
+                            className="cursor-pointer border border-mantis-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/4"
                         >
                             <div className="flex flex-col justify-center items-center">
-                                <VideoCameraIcon className="w-7 text-flush-orange-500" />
+                                <VideoCameraIcon className="w-7 text-mantis-500" />
                                 <h2 className="text-center">
                                     Video Presentation
                                 </h2>
@@ -64,10 +64,10 @@ export const SectionsPart = ({
                         </div>
                         <div
                             onClick={() => handleActiveSection("quiz")}
-                            className="cursor-pointer border border-flush-orange-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/4"
+                            className="cursor-pointer border border-mantis-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/4"
                         >
                             <div className="flex flex-col justify-center items-center">
-                                <BookOpenIcon className="w-7 text-flush-orange-500" />
+                                <BookOpenIcon className="w-7 text-mantis-500" />
                                 <h2 className="text-center">Quiz</h2>
                             </div>
                         </div>

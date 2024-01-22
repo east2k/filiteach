@@ -5,16 +5,17 @@ import { studentLinks, teachLinks } from "@/constants/side-bar";
 import LogoutButton from "./LogoutButton";
 import {
     ChatBubbleOvalLeftIcon,
-    LightBulbIcon,
+    // LightBulbIcon,
     RectangleStackIcon,
 } from "@heroicons/react/20/solid";
+import { GPTModal } from "./GPTModal";
 
 const SideBar = async () => {
     const user = await useGetUser();
     if (!user) return;
 
     return (
-        <div className="flex flex-col h-screen min-w-[200px] py-3 px-3 border-r">
+        <div className="flex flex-col h-screen min-w-[300px] py-3 px-3 border-r">
             <div className="px-1">
                 <Logo />
             </div>
@@ -28,22 +29,16 @@ const SideBar = async () => {
             <div className="mt-auto flex flex-col ">
                 {user.role === "admin" && (
                     <Link
-                        className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-flush-orange-400 hover:text-white"
+                        className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-mantis-400 hover:text-white"
                         href={"/learning/dataset"}
                     >
                         <RectangleStackIcon width={24} />
                         Dataset
                     </Link>
                 )}
+                <GPTModal/>
                 <Link
-                    className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-flush-orange-400 hover:text-white"
-                    href={"/learning/chatgpt"}
-                >
-                    <LightBulbIcon width={24} />
-                    ChatGPT
-                </Link>
-                <Link
-                    className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-flush-orange-400 hover:text-white"
+                    className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-mantis-400 hover:text-white"
                     href={"/learning/chatbot"}
                 >
                     <ChatBubbleOvalLeftIcon width={24} />
@@ -62,7 +57,7 @@ const Links = ({ links }) => {
                 return (
                     <li key={index}>
                         <Link
-                            className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-flush-orange-400 hover:text-white"
+                            className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-mantis-400 hover:text-white"
                             href={item.link}
                         >
                             <Icon width={24} />

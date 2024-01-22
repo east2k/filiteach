@@ -3,29 +3,6 @@ import { CourseCard } from "./CourseCard";
 import Link from "next/link";
 import Image from "next/image";
 
-const placeholderCourses = [
-    {
-        name: "Math Essentials",
-        image: "/assets/images/placeholder-course-images/math.jpg",
-        subtitle: "This is math for me",
-        instructor: "Michael Adriano",
-        score: 150,
-    },
-    {
-        name: "Filipino Essentials",
-        image: "/assets/images/placeholder-course-images/filipino.jpeg",
-        subtitle: "Tayo ay matuto!",
-        instructor: "John Doe",
-        score: 250,
-    },
-    {
-        name: "English Essentials",
-        image: "/assets/images/placeholder-course-images/english.jpg",
-        subtitle: "Good to learn English",
-        instructor: "Glenn Ford",
-        score: 350,
-    },
-];
 export const DashboardSideContent = ({ user, courses }) => {
     const latestCourse = courses[courses.length - 1];
     return (
@@ -33,11 +10,11 @@ export const DashboardSideContent = ({ user, courses }) => {
             <h1 className="text-xl mb-3 font-medium">
                 {user.role === "student"
                     ? "Start Studying now!"
-                    : "Courses You Made"}
+                    : "Learning Materials You Made"}
             </h1>
             <div className="flex flex-col">
                 {user.role === "student" && <p>Recommended for you</p>}
-                <div className="flex flex-col border  border-flush-orange-500 rounded-lg px-3 py-5">
+                <div className="flex flex-col border  border-mantis-500 rounded-lg px-3 py-5">
                     <div className="grid grid-cols-3 gap-5">
                         {courses.length !== 0 ? (
                             <>
@@ -58,22 +35,22 @@ export const DashboardSideContent = ({ user, courses }) => {
                             </>
                         ) : (
                             <h1>
-                                You have no course
+                                You have no Learning Materials
                             </h1>
                         )}
                     </div>
                     <Link
-                        className="px-5 py-4 text-white bg-flush-orange-500 text-center mt-5 ml-auto w-56 rounded-md"
+                        className="px-5 py-4 text-white bg-mantis-500 text-center mt-5 ml-auto w-56 rounded-md"
                         href="/learning/my-courses"
                     >
                         Click here for more!
                     </Link>
                 </div>
-                <div className="mt-5 border border-flush-orange-500 px-5 py-3">
+                <div className="mt-5 border border-mantis-500 px-5 py-3">
                     <h1>
                         {user.role === "student"
                             ? "Continue where you left of before"
-                            : "Latest course you made"}
+                            : "Latest learning material you made"}
                     </h1>
                     {courses.length !== 0 ? (
                         <div className="grid grid-cols-3 bg-white rounded-lg ">
@@ -106,7 +83,7 @@ export const DashboardSideContent = ({ user, courses }) => {
                                 </p>
                                 <Link
                                     href="/learning/courses/test2"
-                                    className="ml-auto px-4 py-2 text-white bg-flush-orange-400 rounded-sm"
+                                    className="ml-auto px-4 py-2 text-white bg-mantis-400 rounded-sm"
                                 >
                                     Continue
                                 </Link>
@@ -114,7 +91,7 @@ export const DashboardSideContent = ({ user, courses }) => {
                         </div>
                     ) : (
                         <h1 className="text-center text-2xl">
-                            Make some courses first
+                            Make some Learning Materials first
                         </h1>
                     )}
                 </div>

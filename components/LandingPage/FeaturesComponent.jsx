@@ -25,7 +25,7 @@ const FeaturesComponent = () => {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-5">
-                  <h3 className="text-2xl mb-2 font-semibold border-b border-b-flush-orange-500 w-fit">
+                  <h3 className="text-2xl mb-2 font-semibold border-b border-b-mantis-500 w-fit">
                     {item.name}
                   </h3>
                   <p className="feature-body text-sm">{item.content}</p>

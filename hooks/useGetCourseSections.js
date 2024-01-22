@@ -60,7 +60,7 @@ const mapData = (data, type, teacherID) => {
     if (data.quiz_content && typeof data.quiz_content === "object") {
         quizArray = Object.values(data.quiz_content);
     }
-
+    
     if (type === "video") {
         return {
             id: data.id,
@@ -70,7 +70,6 @@ const mapData = (data, type, teacherID) => {
             part: data.part,
             runtime: 5,
             type: "video",
-            status: false,
         };
     } else if (type === "quiz") {
         return {
@@ -81,7 +80,6 @@ const mapData = (data, type, teacherID) => {
             quizContent: quizArray,
             runtime: 2,
             type: "quiz",
-            status: false,
         };
     }
 

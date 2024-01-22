@@ -1,7 +1,7 @@
 
 const statList = [
     {
-        label: "Total Courses Made",
+        label: "Total Learning Materials Made",
         amount: 10,
         icon: "Icon",
     },
@@ -11,7 +11,7 @@ const statList = [
         icon: "Icon",
     },
     {
-        label: "Total Assigned Courses",
+        label: "Total Assigned Learning Materials",
         amount: 10,
         icon: "Icon",
     },
@@ -25,9 +25,9 @@ export const Stats = ({ coursesMade }) => {
                 return (
                     <div
                         key={index}
-                        className="flex flex-col items-center px-3 py-5 bg-flush-orange-200 rounded-xl"
+                        className="flex flex-col items-center px-3 py-5 bg-mantis-200 rounded-xl"
                     >
-                        <div className="flex justify-center items-center bg-flush-orange-500 text-white border rounded-full w-8 h-8 text-xs mb-5">
+                        <div className="flex justify-center items-center bg-mantis-500 text-white border rounded-full w-8 h-8 text-xs mb-5">
                             {item.icon}
                         </div>
                         <h1 className="text-sm font-medium">{item.label}</h1>

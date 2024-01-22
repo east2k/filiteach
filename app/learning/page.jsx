@@ -15,9 +15,9 @@ export default async function Learning() {
 
     return (
         <div>
-            <div className="bg-flush-orange-50 shadow-sm">
+            <div className="bg-mantis-50 shadow-sm">
                 <div className="flex flex-row items-center py-3 px-7">
-                    <h1 className="text-4xl font-medium text-flush-orange-600 tracking-wide">
+                    <h1 className="text-4xl font-medium text-mantis-600 tracking-wide">
                         Dashboard
                     </h1>
                 </div>
@@ -52,7 +52,7 @@ export default async function Learning() {
                                     Special Event
                                 </div>
                             </div>
-                            <div className="w-1/3 bg-zinc-100 border border-flush-orange-500 text-black rounded-lg py-5 px-3">
+                            <div className="w-1/3 bg-zinc-100 border border-mantis-500 text-black rounded-lg py-5 px-3">
                                 <h2 className="text-center text-xl mb-3">
                                     Event Title
                                 </h2>
@@ -79,7 +79,7 @@ export default async function Learning() {
                 )}
                 <div className="flex flex-row px-7 py-3">
                     <DashboardSideContent user={user} courses={courses} />
-                    <div className="w-1/5 bg-flush-orange-50 px-4 py-2 pb-4">
+                    <div className="w-1/5 bg-mantis-50 px-4 py-2 pb-4">
                         <h1 className="text-center mb-2 text-xl">
                             Leaderboard
                         </h1>
@@ -109,7 +109,7 @@ export default async function Learning() {
                                 <span>1000</span>
                             </li>
                         </ul>
-                        <button className="w-full rounded-full px-3 py-2 hover:bg-flush-orange-50">
+                        <button className="w-full rounded-full px-3 py-2 hover:bg-mantis-50">
                             Show more...
                         </button>
                     </div>

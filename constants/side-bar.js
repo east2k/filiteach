@@ -17,7 +17,7 @@ export const studentLinks = [
     icon: Squares2X2Icon,
   },
   {
-    name: "All Courses",
+    name: "Learning Materials",
     link: "/learning/courses",
     icon: BookOpenIcon,
   },
@@ -49,22 +49,22 @@ export const teachLinks = [
     icon: Squares2X2Icon,
   },
   {
-    name: "All Courses",
+    name: "All Learning Materials",
     link: "/learning/courses",
     icon: BookOpenIcon,
   },
   {
-    name: "My Courses",
+    name: "My Learning Materials",
     link: "/learning/my-courses",
     icon: FolderIcon,
   },
   {
-    name: "Create a Course",
+    name: "Create a Learning Materials",
     link: "/learning/create-course",
     icon: FolderPlusIcon,
   },
   {
-    name: "Assign courses",
+    name: "Assign Learning Materials",
     link: "#",
     icon: UserPlusIcon,
   },

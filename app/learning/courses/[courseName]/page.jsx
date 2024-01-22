@@ -1,3 +1,5 @@
+import ExpandCourseButton from "@/components/ExpandCourse/ExpandCourseButton";
+import { useGetCourseSections } from "@/hooks/useGetCourseSections";
 import { useGetUser } from "@/hooks/useGetUser";
 import { useRetrieveCourses } from "@/hooks/useRetrieveCourses";
 import { CheckIcon } from "@heroicons/react/20/solid";
@@ -7,8 +9,9 @@ import Link from "next/link";
 const CourseName = async ({ searchParams }) => {
     const { getOneCourse } = await useRetrieveCourses();
     const data = await getOneCourse(searchParams.courseID);
+    const { newData } = await useGetCourseSections(searchParams.courseID);
     const user = await useGetUser();
-
+console.log(data);
     return (
         <div className="relative flex flex-row px-7 py-5 w-full h-full">
             <div className="w-2/3">
@@ -80,22 +83,23 @@ const CourseName = async ({ searchParams }) => {
                 </div>
             </div>
             <div className="flex flex-col fixed right-5 bottom-5">
+                <ExpandCourseButton newData={newData} role={user.role} userId={user.id} />
                 <Link
                     href={{
                         pathname: `/learning/courses/${data.title}/start`,
                         query: {
                             title: data.title,
                             courseID: data.id,
-                            teacher: data.instructor
+                            teacher: data.instructor,
                         },
                     }}
-                    className="bg-flush-orange-400 text-white px-16 py-2 mt-2 rounded-sm text-center"
+                    className="bg-mantis-400 text-white px-16 py-2 mt-2 rounded-sm text-center"
                 >
-                    {user.role==="teacher" ? "Check out" : "Start"}                    
+                    {user.role === "teacher" ? "Check out" : "Start"}
                 </Link>
                 <Link
                     href="/learning/courses/"
-                    className="bg-flush-orange-400 text-white px-16 py-2 mt-2 rounded-sm text-center"
+                    className="bg-mantis-400 text-white px-16 py-2 mt-2 rounded-sm text-center"
                 >
                     Back
                 </Link>

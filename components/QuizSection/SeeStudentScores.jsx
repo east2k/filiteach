@@ -19,31 +19,33 @@ export const SeeStudentScores = ({ teacher, id, instructor }) => {
     return (
         <div>
             <h1 className="text-xl my-2">List of students who had the quiz</h1>
-            <div className="grid grid-cols-2">
+            <div className="grid">
                 {!listOfStudents ? (
                     <p className="text-2xl">None</p>
                 ) : (
                     <>
                         {currentTeacher !== instructor ? (
-                            <h1>
-                                No one currently did this quiz
-                            </h1>
+                            <h1>No one currently did this quiz</h1>
                         ) : (
-                            <>
+                            <div className="grid grid-cols-1">
+                                <div className="flex flex-row border-b pb-3 mb-3">
+                                    <div>Names</div>
+                                    <div className="ml-auto">Scores</div>
+                                </div>
                                 {listOfStudents.map((item, index) => {
                                     console.log(item);
                                     return (
-                                        <>
-                                            <div key={index} className="border">
-                                                Name: {item.student_name}
+                                        <div className="flex flex-row border-b" key={index}>
+                                            <div>
+                                                {item.student_name}
                                             </div>
-                                            <div className="border">
-                                                Score: {item.score}
+                                            <div className="ml-auto">
+                                                {item.score}
                                             </div>
-                                        </>
+                                        </div>
                                     );
                                 })}
-                            </>
+                            </div>
                         )}
                     </>
                 )}

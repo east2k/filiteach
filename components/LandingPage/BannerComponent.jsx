@@ -7,14 +7,14 @@ const BannerComponent = () => {
       <div className="flex flex-row justify-between max-w-screen-2xl m-auto p-12">
         <div className="w-1/2">
           <h1 className="text-7xl w-full font-medium cap">
-            Discover <span className="text-flush-orange-500">Fun</span> and{" "}
-            <span className="text-flush-orange-500">Interactive</span> Learning
+            Discover <span className="text-mantis-500">Fun</span> and{" "}
+            <span className="text-mantis-500">Interactive</span> Learning
             for Filipino Kids!
           </h1>
           <p className="py-7 w-1/2 text-slate-500">
             Provides you with learning experience to grow up your knowledge
           </p>
-          <button className="bg-flush-orange-500 hover:bg-flush-orange-400 text-white px-5 py-3 rounded-lg">
+          <button className="bg-mantis-500 hover:bg-mantis-400 text-white px-5 py-3 rounded-lg">
             Get Started!
           </button>
         </div>

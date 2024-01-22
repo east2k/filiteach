@@ -83,7 +83,7 @@ export const CreateCourseForm = ({
                 {activePart !== 0 && (
                     <button
                         onClick={() => handleChangeActivePart("previous")}
-                        className="hover:bg-flush-orange-200 w-28 py-1 rounded-sm border border-flush-orange-400"
+                        className="hover:bg-mantis-200 w-28 py-1 rounded-sm border border-mantis-400"
                         type="button"
                     >
                         Previous
@@ -93,10 +93,10 @@ export const CreateCourseForm = ({
                     <>
                         <button
                             onClick={() => handleChangeActivePart("next")}
-                            className={` text-white hover:bg-flush-orange-200 hover:text-black w-28 py-1 rounded-sm ${
+                            className={` text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm ${
                                 status
-                                    ? "bg-flush-orange-400"
-                                    : "bg-flush-orange-200"
+                                    ? "bg-mantis-400"
+                                    : "bg-mantis-200"
                             }`}
                             type="button"
                             disabled={!status}
@@ -109,10 +109,10 @@ export const CreateCourseForm = ({
                     <>
                         <button
                             onClick={() => handleChangeActivePart("next")}
-                            className={` text-white hover:bg-flush-orange-200 hover:text-black w-28 py-1 rounded-sm ${
+                            className={` text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm ${
                                 currentSections.length
-                                    ? "bg-flush-orange-400"
-                                    : "bg-flush-orange-200"
+                                    ? "bg-mantis-400"
+                                    : "bg-mantis-200"
                             }`}
                             type="button"
                             disabled={!currentSections.length}
@@ -123,7 +123,7 @@ export const CreateCourseForm = ({
                 )}
                 {activePart === 2 && (
                     <button
-                        className="bg-flush-orange-400 text-white hover:bg-flush-orange-200 hover:text-black w-28 py-1 rounded-sm"
+                        className="bg-mantis-400 text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm"
                         type="submit"
                     >
                         Submit

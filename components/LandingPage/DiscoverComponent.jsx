@@ -21,7 +21,7 @@ const DiscoverComponent = () => {
               >
                 <div className="flex flex-row items-center mb-5">
                   <Image
-                    className="bg-flush-orange-500 w-9 h-9 rounded-lg"
+                    className="bg-mantis-500 w-9 h-9 rounded-lg"
                     src={item.image}
                     alt="icon"
                     width={50}
@@ -30,7 +30,7 @@ const DiscoverComponent = () => {
                   <h2 className="ml-5 text-xl font-semibold">{item.name}</h2>
                 </div>
                 <p className="mb-2">{item.content}</p>
-                <button className="flex flex-row justify-center items-center p-4 py-2 ml-auto rounded-xl text-flush-orange-500">
+                <button className="flex flex-row justify-center items-center p-4 py-2 ml-auto rounded-xl text-mantis-500">
                   Learn More
                   <ChevronRightIcon className="w-5 h-5" />
                 </button>

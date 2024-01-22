@@ -80,6 +80,8 @@ export const ChatSearch = () => {
             method: "POST",
             body: JSON.stringify({ prompt }),
         });
+        console.log(res);
+
         if (res.status !== 200) {
             toastError();
         } else {
@@ -116,7 +118,7 @@ export const ChatSearch = () => {
         <>
             <div className="flex-1 h-2/3 overflow-y-auto">
                 <div className="flex flex-row gap-1 item-center border-b p-5">
-                    <RocketLaunchIcon className="w-5 text-flush-orange-500" />
+                    <RocketLaunchIcon className="w-5 text-mantis-500" />
                     <h1>FiliTeach Chatbot</h1>
                 </div>
                 {questions.map((question, index) => {
@@ -126,7 +128,7 @@ export const ChatSearch = () => {
 
                     return (
                         <div key={index} className="p-5 space-y-2">
-                            <div className="flex flex-row items-center text-flush-orange-500 opacity-70">
+                            <div className="flex flex-row items-center text-mantis-500 opacity-70">
                                 <QuestionMarkCircleIcon className="w-4" />
                                 <h1 className="text-sm font-semibold">
                                     {question}

@@ -3,7 +3,7 @@ export const CreateCourseHeader = ({ activePart }) => {
         <div className="py-5">
             <div className="mx-auto bg-zinc-300 w-1/2 h-1 rounded-full">
                 <div
-                    className={`transition-all duration-500 bg-flush-orange-500 h-full ${
+                    className={`transition-all duration-500 bg-mantis-500 h-full ${
                         activePart === 0
                             ? "w-1/4"
                             : activePart === 1
@@ -18,7 +18,7 @@ export const CreateCourseHeader = ({ activePart }) => {
                         <div
                             className={`relative -top-2 p-1.5 w-1 h-1 rounded-full ${
                                 activePart >= 0
-                                    ? "bg-flush-orange-500"
+                                    ? "bg-mantis-500"
                                     : "bg-zinc-500"
                             }`}
                         ></div>
@@ -30,7 +30,7 @@ export const CreateCourseHeader = ({ activePart }) => {
                         <div
                             className={`relative -top-2 p-1.5 w-1 h-1 rounded-full ${
                                 activePart >= 1
-                                    ? "bg-flush-orange-500"
+                                    ? "bg-mantis-500"
                                     : "bg-zinc-500"
                             }`}
                         ></div>
@@ -42,7 +42,7 @@ export const CreateCourseHeader = ({ activePart }) => {
                         <div
                             className={`relative -top-2 p-1.5 w-1 h-1 rounded-full ${
                                 activePart >= 2
-                                    ? "bg-flush-orange-500"
+                                    ? "bg-mantis-500"
                                     : "bg-zinc-500"
                             }`}
                         ></div>

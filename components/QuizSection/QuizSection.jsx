@@ -28,7 +28,7 @@ const QuizSection = ({ finalData, user, teacher, instructor }) => {
             }
         };
         getData();
-    }, [getQuizData, finalData.id]);
+    }, [getQuizData, finalData.id, user.id]);
 
     const handleSubmit = () => {
         const score = selectedAnswers.reduce(

@@ -15,15 +15,15 @@ export async function POST(req) {
     try {
         const res = await openai.completions.create({
             prompt,
-            model: "text-davinci-003",
+            model: "gpt-3.5-turbo-instruct",
             max_tokens: 512,
             temperature: 0,
         });
         return NextResponse.json({ choices: res.choices });
-    } catch {
+    } catch (error){
         return NextResponse.json(
             {
-                message: "Something went wrong",
+                message: "Something went wrong: " +error,
             },
             { status: 400 }
         );

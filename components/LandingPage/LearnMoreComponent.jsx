@@ -13,7 +13,7 @@ const LearnMoreComponent = () => {
           <p className="py-7 w-1/2 text-slate-500">
             Reach out to us with the provided link
           </p>
-          <button className="bg-flush-orange-500 hover:bg-flush-orange-400 text-white px-5 py-3 rounded-lg">
+          <button className="bg-mantis-500 hover:bg-mantis-400 text-white px-5 py-3 rounded-lg">
             Learn More
           </button>
         </div>

@@ -59,7 +59,7 @@ export const DetailsPart = ({
                 />
             </div>
             <button
-                className="bg-flush-orange-400 w-44 py-1 mt-5 text-white"
+                className="bg-mantis-400 w-44 py-1 mt-5 text-white"
                 onClick={handleDetailsFormSubmit}
             >
                 Submit

@@ -28,7 +28,7 @@ const Navigation = () => {
           return (
             <li key={index}>
               <Link
-                className="hover:text-flush-orange-600 transition-colors rounded-lg mr-6"
+                className="hover:text-mantis-600 transition-colors rounded-lg mr-6"
                 href={item.link}
               >
                 {item.name}

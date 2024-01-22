@@ -11,7 +11,7 @@ const LogoutButton = () => {
   return (
     <button
       onClick={handleLogoutUser}
-      className="mt-auto flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-flush-orange-400 hover:text-white"
+      className="mt-auto flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-mantis-400 hover:text-white"
     >
       <ArrowLeftOnRectangleIcon width={24} />
       Log Out

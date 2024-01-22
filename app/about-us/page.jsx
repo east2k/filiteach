@@ -7,7 +7,7 @@ export default function AboutUs() {
       <section className="flex flex-row max-w-screen-2xl m-auto px-7 py-2 items-center">
         <div className="p-12">
           <span className="uppercase text-zinc-400">About Us</span>
-          <h1 className="text-5xl text-flush-orange-500 font-medium mb-5">
+          <h1 className="text-5xl text-mantis-500 font-medium mb-5">
             Helping students with the aim on improving academic performance
           </h1>
           <p className="text-base text-zinc-700">
@@ -24,7 +24,7 @@ export default function AboutUs() {
           height={500}
         />
       </section>
-      <section className="flex flex-row bg-flush-orange-100 max-w-screen-2xl m-auto px-7 py-7">
+      <section className="flex flex-row bg-mantis-100 max-w-screen-2xl m-auto px-7 py-7">
         <h1 className="p-12 w-1/2 text-4xl">
           Chatbot integrated website e-learning something something
         </h1>
@@ -46,7 +46,7 @@ export default function AboutUs() {
         </div>
       </section>
       <section className="flex flex-col items-center justify-center max-w-screen-2xl m-auto px-7 py-7">
-        <h1 className="text-4xl my-3 text-flush-orange-500">
+        <h1 className="text-4xl my-3 text-mantis-500">
           What do we aim to solve?
         </h1>
         <p className="w-1/2 text-center">
@@ -62,7 +62,7 @@ export default function AboutUs() {
         />
       </section>
       <section className="flex flex-col items-center justify-center max-w-screen-2xl m-auto px-7 py-7">
-        <h1 className="text-4xl my-3 text-flush-orange-500">
+        <h1 className="text-4xl my-3 text-mantis-500">
           What do we offer?
         </h1>
         <p className="w-1/2 text-center">

@@ -10,6 +10,7 @@ const Start = async ({ searchParams }) => {
                 title={searchParams.title}
                 courseID={searchParams.courseID}
                 newData={newData}
+                userId={user.id}
                 role={user.role}
                 teacher={searchParams.teacher}
             />

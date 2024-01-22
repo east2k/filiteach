@@ -4,44 +4,6 @@ import { useRetrieveCourses } from "@/hooks/useRetrieveCourses";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import React from "react";
 
-const placeholderCourses = [
-    {
-        name: "Math Essentials",
-        image: "/assets/images/placeholder-course-images/math.jpg",
-        subtitle: "It's mathing time.",
-        instructor: "Michael Adriano",
-        score: 250,
-    },
-    {
-        name: "Filipino Essentials",
-        image: "/assets/images/placeholder-course-images/filipino.jpeg",
-        subtitle: "Matututo ako yey",
-        instructor: "Edwardo Ricardo",
-        score: 100,
-    },
-    {
-        name: "English Essentials",
-        image: "/assets/images/placeholder-course-images/english.jpg",
-        subtitle: "Subtitle for the given title",
-        instructor: "Glenn Ford",
-        score: 200,
-    },
-    {
-        name: "Science Essentials",
-        image: "/assets/images/placeholder-course-images/science.jpg",
-        subtitle: "Subtitle for the given title",
-        instructor: "Albert Einstein",
-        score: 50,
-    },
-    {
-        name: "History Essentials",
-        image: "/assets/images/placeholder-course-images/history.jpg",
-        subtitle: "Subtitle for the given title",
-        instructor: "George Washington",
-        score: 150,
-    },
-];
-
 const Courses = async () => {
     const { getAllCourses, getLimitedCourses } = await useRetrieveCourses();
     const data = await getAllCourses();
@@ -52,7 +14,7 @@ const Courses = async () => {
                 <h1 className="text-2xl font-medium tracking-wide">
                     Start Learning now!
                 </h1>
-                <p className="py-2 text-lg">Most popular courses right now!</p>
+                <p className="py-2 text-lg">Most popular right now!</p>
                 <div className="grid grid-cols-5 gap-5 px-5">
                     {featuredCourses.map((item, index) => {
                         return (
@@ -81,7 +43,7 @@ const Courses = async () => {
                         <MagnifyingGlassIcon className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2  w-5 h-5" />
                     </div>
                     <div className="">
-                        <div className="text-white bg-flush-orange-400 px-10 py-2 rounded-sm shadow-md cursor-pointer">
+                        <div className="text-white bg-mantis-400 px-10 py-2 rounded-sm shadow-md cursor-pointer">
                             Filter
                         </div>
                     </div>

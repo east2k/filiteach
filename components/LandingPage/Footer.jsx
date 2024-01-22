@@ -22,7 +22,7 @@ export const Footer = () => {
     <footer className=" bg-indigo-950 mt-auto max-h-60">
       <div className="flex flex-row justify-between max-w-screen-2xl w-full m-auto pt-7 px-12 pb-3">
         <div>
-          <h1 className="text-flush-orange-50 font-extrabold text-4xl mb-3">
+          <h1 className="text-mantis-50 font-extrabold text-4xl mb-3">
             FiliTeach
           </h1>
           <p className="text-zinc-200 text-xs">

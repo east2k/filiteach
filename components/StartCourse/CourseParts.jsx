@@ -1,77 +1,29 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PreviewSection } from "./PreviewSection";
 import Link from "next/link";
+import useEnrollCourse from "@/hooks/useEnrollCourse";
 
-const courseParts = [
-    {
-        id: 1,
-        summary:
-            "Summary for part 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum in officiis debitis totam? Illum exercitationem modi nesciunt itaque, architecto fugiat maxime, doloribus repellat laboriosam vel voluptates voluptatem optio eum magni.",
-        runtime: 5,
-        thumbnail: "/assets/images/placeholder-course-parts/part-1.svg",
-        status: true,
-    },
-    {
-        id: 2,
-        summary:
-            "Summary for part 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum in officiis debitis totam? Illum exercitationem modi nesciunt itaque, architecto fugiat maxime, doloribus repellat laboriosam vel voluptates voluptatem optio eum magni",
-        runtime: 4,
-        thumbnail: "/assets/images/placeholder-course-parts/part-2.svg",
-        status: true,
-    },
-    {
-        id: 3,
-        summary:
-            "Summary for part 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum in officiis debitis totam? Illum exercitationem modi nesciunt itaque, architecto fugiat maxime, doloribus repellat laboriosam vel voluptates voluptatem optio eum magni",
-        runtime: 2,
-        thumbnail: "/assets/images/placeholder-course-parts/part-3.svg",
-        status: false,
-    },
-    {
-        id: 4,
-        summary:
-            "Summary for part 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum in officiis debitis totam? Illum exercitationem modi nesciunt itaque, architecto fugiat maxime, doloribus repellat laboriosam vel voluptates voluptatem optio eum magni",
-        runtime: 7,
-        thumbnail: "/assets/images/placeholder-course-parts/part-4.svg",
-        status: false,
-    },
-    {
-        id: 5,
-        summary:
-            "Summary for part 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum in officiis debitis totam? Illum exercitationem modi nesciunt itaque, architecto fugiat maxime, doloribus repellat laboriosam vel voluptates voluptatem optio eum magni",
-        runtime: 4,
-        thumbnail: "/assets/images/placeholder-course-parts/part-5.svg",
-        status: false,
-    },
-    {
-        id: 6,
-        summary:
-            "Summary for part 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum in officiis debitis totam? Illum exercitationem modi nesciunt itaque, architecto fugiat maxime, doloribus repellat laboriosam vel voluptates voluptatem optio eum magni",
-        runtime: 2,
-        thumbnail: "/assets/images/placeholder-course-parts/part-6.svg",
-        status: false,
-    },
-    {
-        id: 7,
-        summary:
-            "Summary for part 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum in officiis debitis totam? Illum exercitationem modi nesciunt itaque, architecto fugiat maxime, doloribus repellat laboriosam vel voluptates voluptatem optio eum magni",
-        runtime: 3,
-        thumbnail: "/assets/images/placeholder-course-parts/part-7.svg",
-        status: false,
-    },
-];
-
-export const CourseParts = ({ newData, title, courseID, role, teacher }) => {
+export const CourseParts = ({
+    newData,
+    title,
+    courseID,
+    userId,
+    role,
+    teacher,
+}) => {
     const [preview, setPreview] = useState();
+    const { enrollCourse } = useEnrollCourse();
+
     const handleChangePreview = (previewID) => {
         const selectedPart = newData.find((part) => {
             return part.part === previewID;
         });
         setPreview(selectedPart);
     };
+
     return (
         <>
             <div className="border p-5 m-2">
@@ -84,7 +36,9 @@ export const CourseParts = ({ newData, title, courseID, role, teacher }) => {
                             <div
                                 onClick={() => handleChangePreview(item.part)}
                                 key={index}
-                                className="flex flex-col cursor-pointer rounded-md text-white justify-center bg-flush-orange-400 border border-white px-3 py-2 w-full h-32"
+                                className={`flex flex-col cursor-pointer rounded-md text-white justify-center bg-mantis-700 border border-white px-3 py-2 w-full h-32 ${
+                                    false ? "opacity-50" : "opacity-100"
+                                }`}
                             >
                                 <h3 className="text-center">
                                     Chapter {index + 1}
@@ -104,9 +58,13 @@ export const CourseParts = ({ newData, title, courseID, role, teacher }) => {
                 </div>
                 <div className="border-t py-5">
                     <h1 className="text-2xl font-medium">Current Progress</h1>
-                    <p className="text-center text-sm">50%</p>
-                    <div className="relative w-full border border-flush-orange-500">
-                        <div className="relative w-1/2 bg-flush-orange-500 py-2"></div>
+                    <p className="text-center text-sm">{50}%</p>
+                    <div className="relative w-full border border-mantis-500 bg-white">
+                        <div
+                            className={`relative ${
+                                "w-[" + 50 + "%]"
+                            } bg-mantis-500 py-2`}
+                        ></div>
                     </div>
                 </div>
                 {preview && (
@@ -122,7 +80,7 @@ export const CourseParts = ({ newData, title, courseID, role, teacher }) => {
                 {!preview ? (
                     <Link
                         href="#"
-                        className="bg-flush-orange-400 text-white px-16 py-2 mt-2 rounded-sm"
+                        className="bg-mantis-400 text-white px-16 py-2 mt-2 rounded-sm"
                     >
                         Start
                     </Link>
@@ -134,10 +92,10 @@ export const CourseParts = ({ newData, title, courseID, role, teacher }) => {
                                 title: title,
                                 courseID: courseID,
                                 part: preview.part,
-                                teacher: teacher
+                                teacher: teacher,
                             },
                         }}
-                        className="bg-flush-orange-400 text-white px-16 py-2 mt-2 rounded-sm"
+                        className="bg-mantis-400 text-white px-16 py-2 mt-2 rounded-sm"
                     >
                         Start
                     </Link>
@@ -147,10 +105,10 @@ export const CourseParts = ({ newData, title, courseID, role, teacher }) => {
                         pathname: `/learning/courses/${title}`,
                         query: {
                             courseID: courseID,
-                            teacher: teacher
+                            teacher: teacher,
                         },
                     }}
-                    className="bg-flush-orange-400 text-white px-16 py-2 mt-2 rounded-sm"
+                    className="bg-mantis-400 text-white px-16 py-2 mt-2 rounded-sm"
                 >
                     Back
                 </Link>

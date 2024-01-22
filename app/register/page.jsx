@@ -11,7 +11,7 @@ const Register = async () => {
   }
 
   return (
-    <section className="bg-gradient-to-t from-white via-flush-orange-200 to-white">
+    <section className="bg-gradient-to-t from-white via-mantis-200 to-white">
       <div className="max-w-screen-2xl m-auto flex justify-center items-center px-12 py-52 mt-auto">
         <div className="w-2/3 flex flex-col">
           <div className="w-2/3 m-auto px-10 py-7 bg-white rounded-lg shadow-lg">
@@ -22,7 +22,7 @@ const Register = async () => {
             <div className="text-xs mt-5 flex flex-row justify-center">
               <p>
                 Already have an account?
-                <Link className="ml-1 text-flush-orange-500" href="/login">
+                <Link className="ml-1 text-mantis-500" href="/login">
                   Login
                 </Link>
               </p>

@@ -54,7 +54,7 @@ const DataSet = () => {
             />
             <button
                 onClick={handleSubmit}
-                className="flex items-center justify-center gap-2 bg-flush-orange-400 hover:bg-flush-orange-300 text-white px-7 py-1 rounded-md"
+                className="flex items-center justify-center gap-2 bg-mantis-400 hover:bg-mantis-300 text-white px-7 py-1 rounded-md"
             >
                 {loading && <PlayIcon className="w-5 animate-spin" />}
                 Submit

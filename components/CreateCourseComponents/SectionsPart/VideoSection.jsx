@@ -73,7 +73,7 @@ export const VideoSection = ({ handleSubmitVideoForm }) => {
             </div>
             <button
                 onClick={handleDoneClick}
-                className="text-white hover:bg-flush-orange-200 bg-flush-orange-400 w-28 py-1 rounded-sm"
+                className="text-white hover:bg-mantis-200 bg-mantis-400 w-28 py-1 rounded-sm"
             >
                 Done
             </button>
