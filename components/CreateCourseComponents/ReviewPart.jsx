@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SectionCard } from "./SectionsPart/SectionCard";
 import Image from "next/image";
 
-export const ReviewPart = ({ values, currentSections }) => {
+export const ReviewPart = ({ values, currentSections,handleChangeActivePart }) => {
     const [displaySection, setDisplaySection] = useState();
     const handleClickSection = (section) => {
         console.log("hello, clicked on", displaySection, section.items);
@@ -13,7 +13,7 @@ export const ReviewPart = ({ values, currentSections }) => {
         }
     };
     return (
-        <div>
+        <div className="w-full">
             <h1 className="text-2xl mb-5">Review before submitting</h1>
             <div className="flex flex-col border-b  pb-5">
                 <p className="text-lg">Title:</p>
@@ -24,12 +24,12 @@ export const ReviewPart = ({ values, currentSections }) => {
                 <p className="text-sm ml-5">{values.description}</p>
             </div>
             <div className="flex flex-col border-b  pb-5">
-                <p className="text-lg">ETA:</p>
+                <p className="text-lg">Estimated time to Finish:</p>
                 <p className="text-sm ml-5">{values.score}</p>
             </div>
             <div className="flex flex-col border-b  pb-5">
-                <p className="text-lg">Subject:</p>
-                <p className="text-sm ml-5">{values.subject}</p>
+                <p className="text-lg ">Subject:</p>
+                <p className="text-sm ml-5 capitalize">{values.subject}</p>
             </div>
             <div className="flex flex-col border-b pb-5 items-center justify-center">
                 <p className="text-lg">Thumbnail:</p>
@@ -44,7 +44,14 @@ export const ReviewPart = ({ values, currentSections }) => {
                 </div>
                 {/* <p className="text-sm ml-5">{values.thumbnail.name}</p> */}
             </div>
-            <h2 className="text-xl mt-5">Sections</h2>
+            <button
+                onClick={() => handleChangeActivePart("edit")}
+                className="hover:bg-mantis-200 w-28 py-1 rounded-sm border border-mantis-400"
+                type="button"
+            >
+                Edit
+            </button>
+            <h2 className="text-xl mt-5">Chapters</h2>
             <div className="grid grid-cols-5 gap-5 mb-7 border-b pb-5">
                 {currentSections.map((item, index) => {
                     let displayThumbnail;
@@ -110,7 +117,7 @@ export const ReviewPart = ({ values, currentSections }) => {
                     })}
                 </div>
             ) : (
-                <h1>Preview Sections</h1>
+                <h1>Preview Chapters</h1>
             )}
         </div>
     );

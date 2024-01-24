@@ -199,16 +199,16 @@ export const QuizSection = ({ handleSubmitQuizForm }) => {
                 )}
                 {questionList.map((item, index) => {
                     return (
-                        <div key={index} className="flex flex-col my-2">
-                            <p>
+                        <div key={index} className="flex flex-col my-2 w-full">
+                            <p className="w-full">
                                 {index + 1}. {item.question}
                             </p>
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 w-full">
                                 {item.answers.map((answer, answerIndex) => {
                                     return (
                                         <div
                                             key={answerIndex}
-                                            className={`py-1 px-2 w-32 border ${
+                                            className={`py-1 px-2 w-full border ${
                                                 answer.correct
                                                     ? "border-green-200"
                                                     : "border-red-200"
@@ -243,7 +243,7 @@ export const QuizSection = ({ handleSubmitQuizForm }) => {
                         onClick={() => handleSubmitQuizForm(questionList)}
                         className="ml-auto mt-2 border bg-green-300 hover:bg-green-200 text-black py-1 px-10 rounded-sm"
                     >
-                        Add Quiz Section
+                        Add Quiz Chapter
                     </button>
                 </div>
             )}

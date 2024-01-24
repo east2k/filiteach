@@ -19,34 +19,50 @@ export const SectionsPart = ({
 }) => {
     return (
         <>
-            <h1 className="text-2xl mb-5">Adding chapters to your course</h1>
-            <div className="grid grid-cols-5 gap-5 mb-7">
-                {currentSections.map((item, index) => {
-                    let displayThumbnail;
-                    if (item.thumbnail === "/assets/images/quiz-thumbnail.jpg")
-                        displayThumbnail = item.thumbnail;
-                    else if (!item.thumbnail)
-                        displayThumbnail =
-                            "/assets/images/video-thumbnail.avif";
-                    else displayThumbnail = URL.createObjectURL(item.thumbnail);
-                    return (
-                        <SectionCard
-                            key={index}
-                            part={index + 1}
-                            thumbnail={displayThumbnail}
-                        />
-                    );
-                })}
-                <div
-                    onClick={handleShowOptions}
-                    className="cursor-pointer flex flex-col items-center justify-center border border-mantis-500 px-2 py-4 rounded-lg"
-                >
-                    <PlusCircleIcon className="text-mantis-500 w-5" />
-                    <p>Add chapter</p>
+            <h1 className="text-2xl mb-5">
+                Adding chapters to your learning material
+            </h1>
+            {!showOptions && (
+                <div className="grid grid-cols-5 gap-5 mb-7">
+                    {currentSections.map((item, index) => {
+                        let displayThumbnail;
+                        if (
+                            item.thumbnail ===
+                            "/assets/images/quiz-thumbnail.jpg"
+                        )
+                            displayThumbnail = item.thumbnail;
+                        else if (!item.thumbnail)
+                            displayThumbnail =
+                                "/assets/images/video-thumbnail.avif";
+                        else
+                            displayThumbnail = URL.createObjectURL(
+                                item.thumbnail
+                            );
+                        return (
+                            <SectionCard
+                                key={index}
+                                part={index + 1}
+                                thumbnail={displayThumbnail}
+                            />
+                        );
+                    })}
+                    <div
+                        onClick={handleShowOptions}
+                        className="cursor-pointer flex flex-col items-center justify-center border border-mantis-500 px-2 py-4 rounded-lg"
+                    >
+                        <PlusCircleIcon className="text-mantis-500 w-5" />
+                        <p>Add chapter</p>
+                    </div>
                 </div>
-            </div>
+            )}
             {showOptions && (
                 <>
+                    <button
+                        onClick={handleShowOptions}
+                        className="text-black ml-auto hover:bg-mantis-200 bg-transparent border border-red-400 w-28 py-1 rounded-sm"
+                    >
+                        Back
+                    </button>
                     <h1 className="my-5 text-lg">
                         Choose what format you would like to use
                     </h1>
@@ -75,10 +91,12 @@ export const SectionsPart = ({
                     {activeSection === "video" ? (
                         <VideoSection
                             handleSubmitVideoForm={handleSubmitVideoForm}
+                            handleShowOptions={handleShowOptions}
                         />
                     ) : activeSection === "quiz" ? (
                         <QuizSection
                             handleSubmitQuizForm={handleSubmitQuizForm}
+                            handleShowOptions={handleShowOptions}
                         />
                     ) : (
                         <></>

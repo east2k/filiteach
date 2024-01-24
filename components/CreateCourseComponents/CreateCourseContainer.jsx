@@ -11,6 +11,8 @@ export const CreateCourseContainer = ({ teacherId }) => {
         if (action === "previous") {
             if (activePart === 0) return;
             setActivePart((prevState) => --prevState);
+        } else if (action === "edit") {
+            setActivePart(0);
         } else {
             if (activePart === 3) return;
             setActivePart((prevState) => ++prevState);

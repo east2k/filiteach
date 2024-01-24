@@ -9,7 +9,7 @@ export const DetailsPart = ({
 }) => {
     return (
         <>
-            <h1 className="text-2xl">Course Details</h1>
+            <h1 className="text-2xl">Learning Material Details</h1>
             <DetailsInputForm
                 label="Title"
                 name="title"
@@ -27,7 +27,7 @@ export const DetailsPart = ({
                 error={errors.description}
             />
             <DetailsInputForm
-                label="ETA Time to Finish"
+                label="Estimated Time to Finish"
                 name="score"
                 type="number"
                 value={values.score}

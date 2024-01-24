@@ -6,15 +6,14 @@ import { SectionsPart } from "./SectionsPart/SectionsPart";
 import { useSectionHandler } from "@/hooks/useSectionHandler";
 import { ReviewPart } from "./ReviewPart";
 import { useInsertCourse } from "@/hooks/useInsertCourse";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { CheckIcon } from "@heroicons/react/20/solid";
 
 export const CreateCourseForm = ({
     teacherId,
     handleChangeActivePart,
     activePart,
 }) => {
-    const router = useRouter();
-
     const {
         values: detailValues,
         errors: detailErrors,
@@ -39,7 +38,7 @@ export const CreateCourseForm = ({
         handleSubmitQuizForm,
     } = useSectionHandler();
 
-    const { insert } = useInsertCourse(teacherId);
+    const { insert, isInserting, isSubmitting } = useInsertCourse(teacherId);
 
     const handleSubmitForm = async (e) => {
         e.preventDefault();
@@ -47,14 +46,33 @@ export const CreateCourseForm = ({
             ...detailValues,
             currentSections,
         };
-        // console.log(finalData);
-        // await testStorage(finalData);
         insert(finalData);
-        // router.push("/learning/courses")
     };
 
     return (
-        <form onSubmit={handleSubmitForm} className="flex flex-col">
+        <form onSubmit={handleSubmitForm} className="flex flex-col relative">
+            {isInserting && (
+                <div className="fixed w-full h-full left-0 top-0 bg-gray-400 bg-opacity-50 flex items-center justify-center">
+                    <div className="flex flex-row bg-green-500 px-4 py-2 rounded-md item-center justify-center">
+                        <p className="text-white mr-5">Creating</p>
+                        <Image
+                            className="animate-spin"
+                            src="/assets/svg/loading.svg"
+                            alt="Loading"
+                            width={25}
+                            height={25}
+                        />
+                    </div>
+                </div>
+            )}
+            {isSubmitting && (
+                <div className="fixed w-full h-full left-0 top-0 bg-gray-400 bg-opacity-50 flex items-center justify-center">
+                    <div className="flex flex-row bg-green-500 px-4 py-2 rounded-md item-center justify-center">
+                        <p className="text-white mr-2">Created!</p>
+                        <CheckIcon className="text-white w-4 h-4 m-auto"/>
+                    </div>
+                </div>
+            )}
             {activePart === 0 ? (
                 <DetailsPart
                     values={detailValues}
@@ -76,6 +94,7 @@ export const CreateCourseForm = ({
                 <ReviewPart
                     values={detailValues}
                     currentSections={currentSections}
+                    handleChangeActivePart={handleChangeActivePart}
                 />
             )}
 
@@ -94,9 +113,7 @@ export const CreateCourseForm = ({
                         <button
                             onClick={() => handleChangeActivePart("next")}
                             className={` text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm ${
-                                status
-                                    ? "bg-mantis-400"
-                                    : "bg-mantis-200"
+                                status ? "bg-mantis-400" : "bg-mantis-200"
                             }`}
                             type="button"
                             disabled={!status}
