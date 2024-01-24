@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { PreviewSection } from "./PreviewSection";
 import Link from "next/link";
-import useEnrollCourse from "@/hooks/useEnrollCourse";
 
 export const CourseParts = ({
     newData,
@@ -15,7 +14,6 @@ export const CourseParts = ({
     teacher,
 }) => {
     const [preview, setPreview] = useState();
-    const { enrollCourse } = useEnrollCourse();
 
     const handleChangePreview = (previewID) => {
         const selectedPart = newData.find((part) => {

@@ -1,21 +1,24 @@
-"use client";
-
-import useEnrollCourse from "@/hooks/useEnrollCourse";
-
-const ExpandCourseButton = ({ role, userId, newData }) => {
-    const { enrollCourse } = useEnrollCourse();
-
+const ExpandCourseButton = ({
+    role,
+    userId,
+    materialId,
+    newData,
+    enrollCourse,
+}) => {
     const handleEnrollment = () => {
         if (role === "student") {
             const enrollData = newData.map((item) => {
                 return { finishedChapter: false, ...item };
             });
-            enrollCourse(userId, enrollData);
+            enrollCourse(userId, materialId, enrollData);
         }
     };
     return (
-        <button onClick={handleEnrollment} className="py-1 px-2 bg-pink-300">
-            Start
+        <button
+            onClick={handleEnrollment}
+            className="bg-mantis-400 text-white px-16 py-2 mt-2 rounded-sm text-center"
+        >
+            Enroll Now!
         </button>
     );
 };
