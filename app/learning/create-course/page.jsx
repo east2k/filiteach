@@ -1,5 +1,5 @@
 import { CreateCourseContainer } from "@/components/CreateCourseComponents/CreateCourseContainer";
-import { useGetUser } from "@/hooks/useGetUser";
+import { useGetUser } from "@/hooks/retrieve/useGetUser";
 import { redirect } from "next/navigation";
 import React from "react";
 

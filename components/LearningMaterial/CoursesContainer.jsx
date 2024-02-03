@@ -3,7 +3,6 @@ import { CourseCard } from "./CourseCard";
 
 export const CoursesContainer = ({ currentDisplayed, courses }) => {
     const filterCoursesBySubject = () => {
-        // Filter courses based on the selected subject (currentDisplayed)
         return courses.filter(
             (course) =>
                 course.subject.toLowerCase() === currentDisplayed.toLowerCase()

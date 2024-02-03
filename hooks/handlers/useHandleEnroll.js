@@ -1,7 +1,7 @@
 import { supabase } from "@/lib/supabase-client";
 import { useState } from "react";
 
-const useEnrollCourse = () => {
+const useHandleEnroll = () => {
     const [enrolling, setEnrolling] = useState(false);
     const [updating, setUpdating] = useState(false);
 
@@ -70,4 +70,4 @@ const useEnrollCourse = () => {
     };
 };
 
-export default useEnrollCourse;
+export default useHandleEnroll;

@@ -1,11 +1,11 @@
 "use client";
 
-import { useDetailsFormValidation } from "@/hooks/useDetailsFormValidation";
+import { useDetailsFormValidation } from "@/hooks/validations/useDetailsFormValidation";
 import { DetailsPart } from "./DetailsPart/DetailsPart";
 import { SectionsPart } from "./SectionsPart/SectionsPart";
 import { useSectionHandler } from "@/hooks/useSectionHandler";
 import { ReviewPart } from "./ReviewPart";
-import { useInsertCourse } from "@/hooks/useInsertCourse";
+import { useInsertCourse } from "@/hooks/insertion/useInsertCourse";
 import Image from "next/image";
 import { CheckIcon } from "@heroicons/react/20/solid";
 

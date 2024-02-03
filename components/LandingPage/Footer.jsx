@@ -19,7 +19,7 @@ export const Footer = () => {
     { name: "Instagram", link: "#" },
   ];
   return (
-    <footer className=" bg-indigo-950 mt-auto max-h-60">
+    <footer className="bg-mantis-600 mt-auto max-h-60">
       <div className="flex flex-row justify-between max-w-screen-2xl w-full m-auto pt-7 px-12 pb-3">
         <div>
           <h1 className="text-mantis-50 font-extrabold text-4xl mb-3">

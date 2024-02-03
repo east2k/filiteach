@@ -1,9 +1,9 @@
-import useSubmitQuiz from "@/hooks/useSubmitQuiz";
+import useHandleQuiz from "@/hooks/handlers/useHandleQuiz";
 import React, { useEffect, useState } from "react";
 
 export const SeeStudentScores = ({ teacher, id, instructor }) => {
     console.log(instructor);
-    const { getAllStudentScores } = useSubmitQuiz();
+    const { getAllStudentScores } = useHandleQuiz();
     const [listOfStudents, setListOfStudents] = useState();
     const [currentTeacher, setCurrentTeacher] = useState();
 

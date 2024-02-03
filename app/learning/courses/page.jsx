@@ -1,6 +1,6 @@
 
 import MaterialsPage from "@/components/MaterialsPage/MaterialsPage";
-import { useRetrieveCourses } from "@/hooks/useRetrieveCourses";
+import { useRetrieveCourses } from "@/hooks/retrieve/useRetrieveCourses";
 import React from "react";
 
 const Courses = async () => {

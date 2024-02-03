@@ -1,6 +1,6 @@
 import { supabase } from "@/lib/supabase-client";
 
-const useSubmitQuiz = () => {
+const useHandleQuiz = () => {
     const insertData = async (studentId, quizID, score) => {
         const { data } = await supabase
             .from("users")
@@ -57,4 +57,4 @@ const useSubmitQuiz = () => {
     return { insertData, getQuizData, getAllStudentScores };
 };
 
-export default useSubmitQuiz;
+export default useHandleQuiz;

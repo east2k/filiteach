@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import ExpandCourseButton from "./ExpandCourseButton";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
-import useEnrollCourse from "@/hooks/useEnrollCourse";
+import useEnrollCourse from "@/hooks/handlers/useHandleEnroll";
 
 const ExpandCourse = ({ user, data, newData }) => {
     const { enrollCourse, checkIfEnrolled, enrolling } = useEnrollCourse();

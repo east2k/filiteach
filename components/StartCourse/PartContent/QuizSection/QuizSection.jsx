@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import QuizContent from "./QuizContent";
 import { ReviewAnswers } from "./ReviewAnswers";
-import useSubmitQuiz from "@/hooks/useSubmitQuiz";
+import useHandleQuiz from "@/hooks/handlers/useHandleQuiz";
 import { SeeStudentScores } from "./SeeStudentScores";
 
 const QuizSection = ({
@@ -13,7 +13,7 @@ const QuizSection = ({
     instructor,
     handleFinishChapter,
 }) => {
-    const { insertData, getQuizData } = useSubmitQuiz();
+    const { insertData, getQuizData } = useHandleQuiz();
 
     const [score, setScore] = useState();
 

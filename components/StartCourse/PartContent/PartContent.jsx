@@ -2,7 +2,7 @@
 
 import QuizSection from "@/components/StartCourse/PartContent/QuizSection/QuizSection";
 import VideoContent from "@/components/StartCourse/PartContent/VideoContent";
-import useEnrollCourse from "@/hooks/useEnrollCourse";
+import useHandleEnroll from "@/hooks/handlers/useHandleEnroll";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -19,7 +19,7 @@ export const PartContent = ({
     nextChapterValidation,
 }) => {
     const { grabUserProgress, updateUserProgress, updating } =
-        useEnrollCourse();
+        useHandleEnroll();
     const [currentProgress, setCurrentProgress] = useState({});
     const [objectData, setObjectData] = useState([]);
     const [finished, setFinished] = useState(false);

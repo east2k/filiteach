@@ -1,5 +1,5 @@
-import { useGetCourseSections } from "@/hooks/useGetCourseSections";
-import { useGetUser } from "@/hooks/useGetUser";
+import { useGetCourseSections } from "@/hooks/retrieve/useGetCourseSections";
+import { useGetUser } from "@/hooks/retrieve/useGetUser";
 import { PartContent } from "@/components/StartCourse/PartContent/PartContent";
 
 const Part = async ({ searchParams }) => {

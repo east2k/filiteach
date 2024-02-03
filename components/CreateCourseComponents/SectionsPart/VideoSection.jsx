@@ -1,4 +1,4 @@
-import { useDetailsFormValidation } from "@/hooks/useDetailsFormValidation";
+import { useDetailsFormValidation } from "@/hooks/validations/useDetailsFormValidation";
 import { useEffect } from "react";
 
 export const VideoSection = ({ handleSubmitVideoForm, handleShowOptions }) => {

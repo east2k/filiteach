@@ -1,6 +1,6 @@
-import { CourseCard } from "@/components/CourseCard";
-import { useGetUser } from "@/hooks/useGetUser";
-import { useRetrieveCourses } from "@/hooks/useRetrieveCourses";
+import { CourseCard } from "@/components/LearningMaterial/CourseCard";
+import { useGetUser } from "@/hooks/retrieve/useGetUser";
+import { useRetrieveCourses } from "@/hooks/retrieve/useRetrieveCourses";
 import Link from "next/link";
 import React from "react";
 

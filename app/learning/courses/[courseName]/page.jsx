@@ -1,7 +1,7 @@
 import ExpandCourse from "@/components/ExpandCourse/ExpandCourse";
-import { useGetCourseSections } from "@/hooks/useGetCourseSections";
-import { useGetUser } from "@/hooks/useGetUser";
-import { useRetrieveCourses } from "@/hooks/useRetrieveCourses";
+import { useGetCourseSections } from "@/hooks/retrieve/useGetCourseSections";
+import { useGetUser } from "@/hooks/retrieve/useGetUser";
+import { useRetrieveCourses } from "@/hooks/retrieve/useRetrieveCourses";
 
 const CourseName = async ({ searchParams }) => {
     const user = await useGetUser();

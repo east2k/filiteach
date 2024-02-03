@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormValidation } from "@/hooks/useFormValidation";
+import { useFormValidation } from "@/hooks/validations/useFormValidation";
 
 export const LoginForm = () => {
   const { values, errors, submit, handleFormChange, handleFormSubmit } =

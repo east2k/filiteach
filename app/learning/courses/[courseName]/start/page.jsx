@@ -1,6 +1,6 @@
 import { CourseParts } from "@/components/StartCourse/CourseParts";
-import { useGetCourseSections } from "@/hooks/useGetCourseSections";
-import { useGetUser } from "@/hooks/useGetUser";
+import { useGetCourseSections } from "@/hooks/retrieve/useGetCourseSections";
+import { useGetUser } from "@/hooks/retrieve/useGetUser";
 const Start = async ({ searchParams }) => {
     const { newData } = await useGetCourseSections(searchParams.courseID);
     const user = await useGetUser();

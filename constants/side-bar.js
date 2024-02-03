@@ -74,3 +74,26 @@ export const teachLinks = [
     icon: QuestionMarkCircleIcon,
   },
 ];
+
+export const adminLinks = [
+  {
+    name: "Dashboard",
+    link: "/learning",
+    icon: Squares2X2Icon,
+  },
+  {
+    name: "All Learning Materials",
+    link: "/learning/courses",
+    icon: BookOpenIcon,
+  },
+  {
+    name: "Assign Teacher",
+    link: "#",
+    icon: UserPlusIcon,
+  },
+  {
+    name: "Help",
+    link: "#",
+    icon: QuestionMarkCircleIcon,
+  },
+];

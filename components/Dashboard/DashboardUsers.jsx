@@ -1,9 +1,9 @@
 import React from "react";
-import { CourseCard } from "./CourseCard";
+import { CourseCard } from "../LearningMaterial/CourseCard";
 import Link from "next/link";
 import Image from "next/image";
 
-export const DashboardSideContent = ({ user, courses }) => {
+const DashboardUsers = ({ user, courses }) => {
     const latestCourse = courses[courses.length - 1];
     return (
         <div className="w-full px-7 py-6">
@@ -34,9 +34,7 @@ export const DashboardSideContent = ({ user, courses }) => {
                                 })}
                             </>
                         ) : (
-                            <h1>
-                                You have no Learning Materials
-                            </h1>
+                            <h1>You have no Learning Materials</h1>
                         )}
                     </div>
                     <Link
@@ -75,11 +73,12 @@ export const DashboardSideContent = ({ user, courses }) => {
                                 <p className="text-sm">
                                     Instructor: {latestCourse.instructor}
                                 </p>
-                                <p className="text-sm">
+                                {/* <p className="text-sm">
                                     Points: {latestCourse.score}
-                                </p>
+                                </p> */}
                                 <p className="text-sm">
-                                    Estimate time to Finish: 10 mins
+                                    Estimate time to Finish:{" "}
+                                    {latestCourse.score} mins
                                 </p>
                                 <Link
                                     href="/learning/courses/test2"
@@ -99,3 +98,5 @@ export const DashboardSideContent = ({ user, courses }) => {
         </div>
     );
 };
+
+export default DashboardUsers;

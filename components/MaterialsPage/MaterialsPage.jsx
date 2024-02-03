@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { CoursesContainer } from "../CoursesContainer";
+import { CoursesContainer } from "../LearningMaterial/CoursesContainer";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { CourseCard } from "../CourseCard";
+import { CourseCard } from "../LearningMaterial/CourseCard";
 
 const MaterialsPage = ({ data, featuredCourses }) => {
     const [currentDisplayed, setCurrentDisplayed] = useState("none");

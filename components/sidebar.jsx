@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { useGetUser } from "@/hooks/useGetUser";
-import { studentLinks, teachLinks } from "@/constants/side-bar";
+import { useGetUser } from "@/hooks/retrieve/useGetUser";
+import { studentLinks, teachLinks, adminLinks } from "@/constants/side-bar";
 import LogoutButton from "./CredentialComponents/LogoutButton";
 import {
     ChatBubbleOvalLeftIcon,
@@ -25,7 +25,13 @@ const SideBar = async () => {
             </div>
             <div className="border capitalize">Role: {user.role}</div>
             <Links
-                links={user.role === "student" ? studentLinks : teachLinks}
+                links={
+                    user.role === "student"
+                        ? studentLinks
+                        : user.role === "teacher"
+                        ? teachLinks
+                        : adminLinks
+                }
             />
             <div className="mt-auto flex flex-col ">
                 {user.role === "admin" && (
@@ -34,7 +40,7 @@ const SideBar = async () => {
                         href={"/learning/dataset"}
                     >
                         <RectangleStackIcon width={24} />
-                        Dataset
+                        Add Dataset to Chatbot
                     </Link>
                 )}
                 <GPTModal />

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { PreviewSection } from "./PreviewSection";
 import Link from "next/link";
-import useEnrollCourse from "@/hooks/useEnrollCourse";
+import useHandleEnroll from "@/hooks/handlers/useHandleEnroll";
 import { Progress } from "@material-tailwind/react";
 
 export const CourseParts = ({
@@ -17,7 +17,7 @@ export const CourseParts = ({
 }) => {
     const [preview, setPreview] = useState();
     const [userProgress, setUserProgress] = useState([]);
-    const { grabUserProgress } = useEnrollCourse();
+    const { grabUserProgress } = useHandleEnroll();
 
     const [progressPercentage, setProgressPercentage] = useState(0);
 
