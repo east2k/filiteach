@@ -17,10 +17,10 @@ const subjectList = [
         label: "Science",
         value: "science",
     },
-    {
-        label: "Others",
-        value: "others",
-    },
+    // {
+    //     label: "Others",
+    //     value: "others",
+    // },
 ];
 
 export const SubjectRadio = ({ values, handleDetailsFormChange }) => {
@@ -43,7 +43,7 @@ export const SubjectRadio = ({ values, handleDetailsFormChange }) => {
                         <label htmlFor={item.value} className="ml-1 text-sm">
                             {item.label}
                         </label>
-                        {item.value === "others" && (
+                        {/* {item.value === "others" && (
                             <input
                                 className="text-sm ml-5 border outline-none py-2 px-3 rounded-md"
                                 id="subject"
@@ -52,7 +52,7 @@ export const SubjectRadio = ({ values, handleDetailsFormChange }) => {
                                 disabled={values.subject !== "others"}
                                 placeholder="Specify here..."
                             />
-                        )}
+                        )} */}
                     </div>
                 );
             })}

@@ -19,7 +19,7 @@ export const SeeStudentScores = ({ teacher, id, instructor }) => {
     return (
         <div>
             <h1 className="text-xl my-2">List of students who had the quiz</h1>
-            <div className="grid">
+            <div className="grid mx-24 mt-5">
                 {!listOfStudents ? (
                     <p className="text-2xl">None</p>
                 ) : (

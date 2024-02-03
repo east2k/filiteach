@@ -109,7 +109,7 @@ const ExpandCourse = ({ user, data, newData }) => {
                 </div>
             </div>
             <div className="flex flex-col fixed right-5 bottom-5">
-                {!enrolled && (
+                {(!enrolled && user.role !== "teacher") && (
                     <ExpandCourseButton
                         enrollCourse={enrollCourse}
                         newData={newData}
@@ -118,7 +118,7 @@ const ExpandCourse = ({ user, data, newData }) => {
                         userId={user.id}
                     />
                 )}
-                {enrolled && (
+                {(enrolled || user.role === "teacher") && (
                     <Link
                         href={{
                             pathname: `/learning/courses/${data.title}/start`,

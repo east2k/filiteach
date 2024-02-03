@@ -108,10 +108,6 @@ export const GPTModal = () => {
                                                     className="flex-1 h-2/3 overflow-y-auto"
                                                     ref={logRef}
                                                 >
-                                                    {/* <div className="flex flex-row gap-1 item-center border-b p-5">
-                    <RocketLaunchIcon className="w-5 text-mantis-500" />
-                    <h1>FiliTeach Chatbot</h1>
-                </div> */}
                                                     {questions.map(
                                                         (question, index) => {
                                                             const answer =

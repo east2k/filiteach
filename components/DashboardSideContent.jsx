@@ -6,7 +6,7 @@ import Image from "next/image";
 export const DashboardSideContent = ({ user, courses }) => {
     const latestCourse = courses[courses.length - 1];
     return (
-        <div className="w-4/5 px-7 py-6">
+        <div className="w-full px-7 py-6">
             <h1 className="text-xl mb-3 font-medium">
                 {user.role === "student"
                     ? "Start Studying now!"

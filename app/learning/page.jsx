@@ -23,7 +23,7 @@ export default async function Learning() {
                 </div>
             </div>
             <div className="flex flex-col">
-                {user.role === "student" && (
+                {/* {user.role === "student" && (
                     <div className="py-3 px-7 bg-blue-50">
                         <div className="flex flex-row items-center justify-between mb-7">
                             <div className="flex flex-row gap-3">
@@ -70,7 +70,7 @@ export default async function Learning() {
                             </div>
                         </div>
                     </div>
-                )}
+                )} */}
                 {user.role === "teacher" && (
                     <div className="flex flex-col px-7 py-3">
                         <h1 className="text-xl mb-3 font-medium">Statistics</h1>
@@ -79,7 +79,7 @@ export default async function Learning() {
                 )}
                 <div className="flex flex-row px-7 py-3">
                     <DashboardSideContent user={user} courses={courses} />
-                    <div className="w-1/5 bg-mantis-50 px-4 py-2 pb-4">
+                    {/* <div className="w-1/5 bg-mantis-50 px-4 py-2 pb-4">
                         <h1 className="text-center mb-2 text-xl">
                             Leaderboard
                         </h1>
@@ -112,7 +112,7 @@ export default async function Learning() {
                         <button className="w-full rounded-full px-3 py-2 hover:bg-mantis-50">
                             Show more...
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -6,7 +6,13 @@ import { ReviewAnswers } from "./ReviewAnswers";
 import useSubmitQuiz from "@/hooks/useSubmitQuiz";
 import { SeeStudentScores } from "./SeeStudentScores";
 
-const QuizSection = ({ finalData, user, teacher, instructor }) => {
+const QuizSection = ({
+    finalData,
+    user,
+    teacher,
+    instructor,
+    handleFinishChapter,
+}) => {
     const { insertData, getQuizData } = useSubmitQuiz();
 
     const [score, setScore] = useState();
@@ -44,6 +50,7 @@ const QuizSection = ({ finalData, user, teacher, instructor }) => {
         setScore(score);
         insertData(user.id, finalData.id, score);
         setSubmitted(true);
+        handleFinishChapter();
     };
 
     const handleAnswerSelect = (questionIndex, answerIndex) => {

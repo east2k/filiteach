@@ -31,9 +31,9 @@ const QuizContent = ({
                                                 ? submitted
                                                     ? answerIndex ===
                                                       item.correctAnswerIndex
-                                                        ? "bg-green-300" // Correct answer chosen
-                                                        : "bg-red-300" // Incorrect answer chosen
-                                                    : "bg-orange-300" // Selected, not submitted
+                                                        ? "bg-green-300" 
+                                                        : "bg-red-300" 
+                                                    : "bg-orange-300"
                                                 : ""
                                         }`}
                                         onClick={() =>

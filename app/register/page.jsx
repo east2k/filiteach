@@ -1,5 +1,5 @@
 import readUserSession from "@/auth-actions/readUserSession";
-import { RegisterForm } from "@/components/RegisterForm";
+import { RegisterForm } from "@/components/CredentialComponents/RegisterForm";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";

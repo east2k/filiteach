@@ -4,6 +4,7 @@ import { useGetUser } from "@/hooks/useGetUser";
 const Start = async ({ searchParams }) => {
     const { newData } = await useGetCourseSections(searchParams.courseID);
     const user = await useGetUser();
+
     return (
         <div>
             <CourseParts

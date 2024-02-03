@@ -1,10 +1,18 @@
 import React from "react";
 import { CourseCard } from "./CourseCard";
 
-export const CoursesContainer = ({ courses }) => {
+export const CoursesContainer = ({ currentDisplayed, courses }) => {
+    const filterCoursesBySubject = () => {
+        // Filter courses based on the selected subject (currentDisplayed)
+        return courses.filter(
+            (course) =>
+                course.subject.toLowerCase() === currentDisplayed.toLowerCase()
+        );
+    };
+
     return (
         <div className="grid grid-cols-4 gap-5">
-            {courses.map((item, index) => {
+            {filterCoursesBySubject().map((item, index) => {
                 return (
                     <CourseCard
                         key={index}

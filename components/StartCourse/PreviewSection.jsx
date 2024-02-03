@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const PreviewSection = ({ thumbnail, summary, runtime, status }) => {
+export const PreviewSection = ({ thumbnail, summary, runtime, status, role }) => {
     return (
         <div className="w-full py-5 border-t mb-10">
             <h1 className="text-2xl mb-5 font-medium">Preview</h1>
@@ -18,16 +18,20 @@ export const PreviewSection = ({ thumbnail, summary, runtime, status }) => {
                     <h2 className="font-medium">Summary</h2>
                     <p className="mb-5">{summary}</p>
                     <p className="mt-auto">Runtime: {runtime} mins</p>
-                    <p>Current Status</p>
-                    <div
-                        className={`rounded-full w-28 border border-mantis-200 ${
-                            status ? "bg-green-500" : "bg-red-400"
-                        }`}
-                    >
-                        <p className="text-center text-sm py-2 px-3 text-white">
-                            {status ? "Finished" : "Not Finished"}
-                        </p>
-                    </div>
+                    {role !== "teacher" && (
+                        <>
+                            <p>Current Status</p>
+                            <div
+                                className={`rounded-full w-28 border border-mantis-200 ${
+                                    status ? "bg-green-500" : "bg-red-400"
+                                }`}
+                            >
+                                <p className="text-center text-sm py-2 px-3 text-white">
+                                    {status ? "Finished" : "Not Finished"}
+                                </p>
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

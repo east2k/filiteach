@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { useGetUser } from "@/hooks/useGetUser";
 import { studentLinks, teachLinks } from "@/constants/side-bar";
-import LogoutButton from "./LogoutButton";
+import LogoutButton from "./CredentialComponents/LogoutButton";
 import {
     ChatBubbleOvalLeftIcon,
     // LightBulbIcon,
