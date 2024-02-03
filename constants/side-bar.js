@@ -21,21 +21,21 @@ export const studentLinks = [
     link: "/learning/courses",
     icon: BookOpenIcon,
   },
-  {
-    name: "Events",
-    link: "#",
-    icon: CalendarIcon,
-  },
-  {
-    name: "Assigned to me",
-    link: "#",
-    icon: UserIcon,
-  },
-  {
-    name: "Roadmap",
-    link: "#",
-    icon: MapIcon,
-  },
+  // {
+  //   name: "Events",
+  //   link: "#",
+  //   icon: CalendarIcon,
+  // },
+  // {
+  //   name: "Assigned to me",
+  //   link: "#",
+  //   icon: UserIcon,
+  // },
+  // {
+  //   name: "Roadmap",
+  //   link: "#",
+  //   icon: MapIcon,
+  // },
   {
     name: "Help",
     link: "#",
@@ -63,11 +63,11 @@ export const teachLinks = [
     link: "/learning/create-course",
     icon: FolderPlusIcon,
   },
-  {
-    name: "Assign Learning Materials",
-    link: "#",
-    icon: UserPlusIcon,
-  },
+  // {
+  //   name: "Assign Learning Materials",
+  //   link: "#",
+  //   icon: UserPlusIcon,
+  // },
   {
     name: "Help",
     link: "#",
