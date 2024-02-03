@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-const NextChapterLink = ({ title, courseID, part, teacher }) => {
+const NextChapterLink = ({ title, courseID, part, teacher, type}) => {
     return (
         <>
             <Link
                 href={{
-                    pathname: `/learning/courses/${title}/start/${parseInt(part)+1}`,
+                    pathname: `/learning/courses/${title}/start/${parseInt(part)+1}-${type}`,
                     query: {
                         title: title,
                         courseID: courseID,

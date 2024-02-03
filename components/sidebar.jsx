@@ -9,6 +9,7 @@ import {
     RectangleStackIcon,
 } from "@heroicons/react/20/solid";
 import { GPTModal } from "./GPTModal";
+import ChatBotButton from "./ChatBotButton";
 
 const SideBar = async () => {
     const user = await useGetUser();
@@ -36,14 +37,8 @@ const SideBar = async () => {
                         Dataset
                     </Link>
                 )}
-                <GPTModal/>
-                <Link
-                    className="flex flex-row gap-3 items-center p-2 rounded text-shark-900 hover:bg-mantis-400 hover:text-white"
-                    href={"/learning/chatbot"}
-                >
-                    <ChatBubbleOvalLeftIcon width={24} />
-                    Chatbot
-                </Link>
+                <GPTModal />
+                <ChatBotButton />
                 <LogoutButton />
             </div>
         </div>

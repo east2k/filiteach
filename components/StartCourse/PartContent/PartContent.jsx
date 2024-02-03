@@ -5,7 +5,7 @@ import VideoContent from "@/components/StartCourse/PartContent/VideoContent";
 import useEnrollCourse from "@/hooks/useEnrollCourse";
 import Image from "next/image";
 import Link from "next/link";
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import NextChapterLink from "./NextChapterLink";
 
@@ -22,6 +22,7 @@ export const PartContent = ({
     const [currentProgress, setCurrentProgress] = useState({});
     const [objectData, setObjectData] = useState([]);
     const [finished, setFinished] = useState(false);
+    const [nextIndex, setNextIndex] = useState(0);
 
     useEffect(() => {
         const loadData = async () => {
@@ -29,11 +30,14 @@ export const PartContent = ({
             const foundProgress = data[0].course_content.find(
                 (item) => item.part === parseInt(part)
             );
+            const nextProgressIndex =
+                data[0]?.course_content.indexOf(foundProgress) + 1;
+
+            setNextIndex(nextProgressIndex);
             setCurrentProgress(foundProgress);
             setFinished(foundProgress.finishedChapter);
             setObjectData(data);
         };
-        console.log(objectData, currentProgress);
         if (!objectData.length && user.role !== "teacher") {
             loadData();
         }
@@ -124,6 +128,7 @@ export const PartContent = ({
                             courseID={courseID}
                             part={part}
                             teacher={teacher}
+                            type={objectData[0].course_content[nextIndex].type}
                         />
                     )}
                 <Link

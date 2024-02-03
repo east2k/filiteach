@@ -19,7 +19,6 @@ export const CourseParts = ({
     const [userProgress, setUserProgress] = useState([]);
     const { grabUserProgress } = useEnrollCourse();
 
-    const [progressBar, setProgressBar] = useState("w-[0%]");
     const [progressPercentage, setProgressPercentage] = useState(0);
 
     useEffect(() => {
@@ -36,8 +35,6 @@ export const CourseParts = ({
             const totalCount = courseContent.length;
 
             const percentage = Math.round((trueCount / totalCount) * 100);
-            console.log(percentage);
-            setProgressBar(`w-[${percentage}%]`);
             setProgressPercentage(percentage);
             setUserProgress(data[0].course_content);
         };
@@ -133,7 +130,11 @@ export const CourseParts = ({
                                 <p className="text-center text-sm">
                                     {progressPercentage}%
                                 </p>
-                                <Progress value={progressPercentage} size="lg" color="green"/>
+                                <Progress
+                                    value={progressPercentage}
+                                    size="lg"
+                                    color="green"
+                                />
                             </div>
                         )}
                         {preview && (
@@ -157,7 +158,7 @@ export const CourseParts = ({
                         ) : (
                             <Link
                                 href={{
-                                    pathname: `/learning/courses/${title}/start/${preview?.part}`,
+                                    pathname: `/learning/courses/${title}/start/${preview?.part}-${preview?.type}`,
                                     query: {
                                         title: title,
                                         courseID: courseID,
