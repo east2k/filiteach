@@ -10,7 +10,6 @@ import React from "react";
 
 const ChatBotButton = () => {
     const pathname = usePathname();
-    console.log(pathname.includes("quiz"));
     return (
         <>
             {pathname.includes("quiz") ? (

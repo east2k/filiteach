@@ -54,7 +54,6 @@ export const GPTModal = () => {
             }
 
             const data = await res.json();
-            console.log(data);
             setAnswers((currentAnswer) => [
                 ...currentAnswer,
                 data.choices[0].message.content,

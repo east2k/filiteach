@@ -6,6 +6,7 @@ const Part = async ({ searchParams }) => {
     const user = await useGetUser();
     const { newData } = await useGetCourseSections(searchParams.courseID);
     const finalData = newData[searchParams.part - 1];
+    const nextChapterValidation = newData[searchParams.part]
     return (
         <>
             <PartContent
@@ -15,6 +16,7 @@ const Part = async ({ searchParams }) => {
                 courseID={searchParams.courseID}
                 part={searchParams.part}
                 teacher={searchParams.teacher}
+                nextChapterValidation={!nextChapterValidation}
             />
         </>
     );

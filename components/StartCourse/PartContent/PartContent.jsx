@@ -16,6 +16,7 @@ export const PartContent = ({
     courseID,
     part,
     teacher,
+    nextChapterValidation,
 }) => {
     const { grabUserProgress, updateUserProgress, updating } =
         useEnrollCourse();
@@ -49,6 +50,7 @@ export const PartContent = ({
         part,
         user.id,
         user.role,
+        finalData,
     ]);
 
     const handleFinishChapter = async () => {
@@ -119,18 +121,24 @@ export const PartContent = ({
                 )}
             </div>
             <div className="flex flex-col fixed right-5 bottom-5">
-                {user.role !== "teacher" &&
-                    finished &&
-                    currentProgress.part !==
-                        objectData[0].course_content.length && (
-                        <NextChapterLink
-                            title={title}
-                            courseID={courseID}
-                            part={part}
-                            teacher={teacher}
-                            type={objectData[0].course_content[nextIndex].type}
-                        />
-                    )}
+                {user.role === "teacher" && !nextChapterValidation && (
+                    <NextChapterLink
+                        title={title}
+                        courseID={courseID}
+                        part={part}
+                        teacher={teacher}
+                        type={"not-valid"}
+                    />
+                )}
+                {finished && !nextChapterValidation && (
+                    <NextChapterLink
+                        title={title}
+                        courseID={courseID}
+                        part={part}
+                        teacher={teacher}
+                        type={objectData[0].course_content[nextIndex].type}
+                    />
+                )}
                 <Link
                     href={{
                         pathname: `/learning/courses/${title}/start/`,
