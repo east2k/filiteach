@@ -8,6 +8,7 @@ import {
   Squares2X2Icon,
   UserIcon,
   UserPlusIcon,
+  UsersIcon,
 } from "@heroicons/react/20/solid";
 
 export const studentLinks = [
@@ -82,14 +83,24 @@ export const adminLinks = [
     icon: Squares2X2Icon,
   },
   {
+    name: "Students List",
+    link: "/learning/students-list",
+    icon: UserIcon,
+  },
+  {
+    name: "Teachers List",
+    link: "/learning/teachers-list",
+    icon: UsersIcon,
+  },
+  {
+    name: "Assign Teachers",
+    link: "/learning/assign-teachers",
+    icon: UserPlusIcon,
+  },
+  {
     name: "All Learning Materials",
     link: "/learning/courses",
     icon: BookOpenIcon,
-  },
-  {
-    name: "Assign Teacher",
-    link: "#",
-    icon: UserPlusIcon,
   },
   {
     name: "Help",

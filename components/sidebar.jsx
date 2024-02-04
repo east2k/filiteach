@@ -3,11 +3,7 @@ import Logo from "./Logo";
 import { useGetUser } from "@/hooks/retrieve/useGetUser";
 import { studentLinks, teachLinks, adminLinks } from "@/constants/side-bar";
 import LogoutButton from "./CredentialComponents/LogoutButton";
-import {
-    ChatBubbleOvalLeftIcon,
-    // LightBulbIcon,
-    RectangleStackIcon,
-} from "@heroicons/react/20/solid";
+import { RectangleStackIcon } from "@heroicons/react/20/solid";
 import { GPTModal } from "./GPTModal";
 import ChatBotButton from "./ChatBotButton";
 

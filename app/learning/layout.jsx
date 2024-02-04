@@ -14,7 +14,7 @@ export default async function LearningLayout({ children }) {
   return (
     <section className="flex flex-row w-full m-auto h-screen">
       <SideBar />
-      <div className="h-100 overflow-auto w-full ">{children}</div>
+      <div className="h-100 overflow-auto w-full">{children}</div>
     </section>
   );
 }
