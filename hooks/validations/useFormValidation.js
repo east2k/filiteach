@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { placeholderData } from "@/public/assets/data/placeholderData";
 import { insert } from "@/auth-actions/insert";
 import { loginUser } from "@/auth-actions/loginUser";
 
@@ -8,10 +7,6 @@ const validateRegisterForm = (values) => {
 
     if (!values.email.trim()) {
         errors.email = "Email is required";
-    }
-
-    if (!values.username.trim()) {
-        errors.username = "Username is required";
     }
 
     if (!values.firstName.trim()) {
@@ -35,19 +30,6 @@ const validateRegisterForm = (values) => {
 
     if (values.password !== values.confirmPassword) {
         errors.confirmPassword = "Password does not match";
-    }
-
-    const matchingUser = placeholderData.find(
-        (user) => user.username === values.username
-    );
-
-    if (
-        values.username.trim() &&
-        values.password.trim() &&
-        values.password.length >= 5 &&
-        matchingUser
-    ) {
-        errors.matchingUser = "Username already exists";
     }
 
     return { errors };
