@@ -15,7 +15,17 @@ export const useHandleRetrieveUsers = async () => {
     const retrieveAllTeachers = async () => {
         const { data: teachers, error } = await supabase
             .from("teachers")
-            .select("*");
+            .select("*")
+            .order("id", { ascending: false });
+        const formatData = teachers.map(mapData);
+        return formatData;
+    };
+
+    const retrieveTeachersWithNoSubject = async () => {
+        const { data: teachers, error } = await supabase
+            .from("teachers")
+            .select("*")
+            .is("subject_assigned", null);
         const formatData = teachers.map(mapData);
         return formatData;
     };
@@ -32,7 +42,8 @@ export const useHandleRetrieveUsers = async () => {
     const retrieveAllStudents = async () => {
         const { data: students, error } = await supabase
             .from("students")
-            .select("*");
+            .select("*")
+            .order("id", { ascending: false });
         const formatData = students.map(mapData);
         return formatData;
     };
@@ -42,6 +53,7 @@ export const useHandleRetrieveUsers = async () => {
         retrieveRecentStudents,
         retrieveAllTeachers,
         retrieveAllStudents,
+        retrieveTeachersWithNoSubject,
     };
 };
 

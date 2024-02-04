@@ -43,16 +43,6 @@ export const SubjectRadio = ({ values, handleDetailsFormChange }) => {
                         <label htmlFor={item.value} className="ml-1 text-sm">
                             {item.label}
                         </label>
-                        {/* {item.value === "others" && (
-                            <input
-                                className="text-sm ml-5 border outline-none py-2 px-3 rounded-md"
-                                id="subject"
-                                name="subject"
-                                type="text"
-                                disabled={values.subject !== "others"}
-                                placeholder="Specify here..."
-                            />
-                        )} */}
                     </div>
                 );
             })}

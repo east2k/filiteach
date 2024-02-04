@@ -27,16 +27,6 @@ const DashboardAdmin = ({
             icon: <PencilIcon width={20} />,
         },
         {
-            label: "Total Teacher with subject assigned",
-            amount: withSub,
-            icon: <UsersIcon width={20} />,
-        },
-        {
-            label: "Total Teacher with no subjects assigned",
-            amount: noSub,
-            icon: <XMarkIcon width={20} />,
-        },
-        {
             label: "Total Students",
             amount: allStudents.length,
             icon: <UserIcon width={20} />,
@@ -45,6 +35,16 @@ const DashboardAdmin = ({
             label: "Total Learning Materials Made",
             amount: allCourses.length,
             icon: <BookOpenIcon width={20} />,
+        },
+        {
+            label: "Total Teacher with subject assigned",
+            amount: withSub,
+            icon: <UsersIcon width={20} />,
+        },
+        {
+            label: "Total Teacher with no subjects assigned",
+            amount: noSub,
+            icon: <XMarkIcon width={20} />,
         },
     ];
     return (
@@ -103,14 +103,6 @@ const DashboardAdmin = ({
                         </div>
                     );
                 })}
-                <div className="flex justify-center items-center">
-                    <Link
-                        href="/learning/teachers-list"
-                        className="border border-mantis-200 hover:border-mantis-300 my-auto px-4 py-1 rounded-lg"
-                    >
-                        More...
-                    </Link>
-                </div>
             </div>
             <div className="border border-mantis-500 px-2 py-3">
                 <h1 className="text-2xl">Latest students registered</h1>
@@ -131,14 +123,14 @@ const DashboardAdmin = ({
                         </div>
                     );
                 })}
-                <div className="flex justify-center items-center">
-                    <Link
-                        href="/learning/students-list"
-                        className="border border-mantis-200 hover:border-mantis-300 my-auto px-4 py-1 rounded-lg"
-                    >
-                        More...
-                    </Link>
-                </div>
+            </div>
+            <div className="flex justify-center items-center mt-5">
+                <Link
+                    href="/learning/users-list"
+                    className="border border-mantis-200 hover:border-mantis-300 my-auto px-4 py-1 rounded-lg"
+                >
+                    See all users...
+                </Link>
             </div>
         </div>
     );

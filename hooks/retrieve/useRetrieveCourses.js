@@ -39,6 +39,18 @@ export const useRetrieveCourses = async () => {
         return coursesWithCDN;
     };
 
+    const getOwnCoursesLimited = async (id) => {
+        const { data: courses } = await supabase
+            .from("courses")
+            .select("*")
+            .eq("teacher_id", id)
+            .range(0, 2)
+            .order("id", { ascending: false });
+
+        const coursesWithCDN = courses.map(mapData);
+        return coursesWithCDN;
+    };
+
     const getLimitedCourses = async (amount) => {
         const { data: courses } = await supabase
             .from("courses")
@@ -50,7 +62,13 @@ export const useRetrieveCourses = async () => {
         return coursesWithCDN;
     };
 
-    return { getAllCourses, getOneCourse, getOwnCourses, getLimitedCourses };
+    return {
+        getAllCourses,
+        getOneCourse,
+        getOwnCourses,
+        getLimitedCourses,
+        getOwnCoursesLimited,
+    };
 };
 
 const formatUploadDate = (dateString) => {

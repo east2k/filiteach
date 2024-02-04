@@ -6,8 +6,12 @@ import { useRetrieveCourses } from "@/hooks/retrieve/useRetrieveCourses";
 
 export default async function Learning() {
     const user = await useGetUser();
-    const { getOwnCourses, getLimitedCourses, getAllCourses } =
-        await useRetrieveCourses();
+    const {
+        getOwnCourses,
+        getOwnCoursesLimited,
+        getLimitedCourses,
+        getAllCourses,
+    } = await useRetrieveCourses();
     const {
         retrieveRecentStudents,
         retrieveRecentTeachers,
@@ -15,9 +19,10 @@ export default async function Learning() {
         retrieveAllStudents,
     } = await useHandleRetrieveUsers();
 
-    let courses;
+    let courses, coursesMade;
     if (user.role === "teacher") {
-        courses = await getOwnCourses(user.id);
+        coursesMade = await getOwnCourses(user.id);
+        courses = await getOwnCoursesLimited(user.id);
     } else {
         courses = await getLimitedCourses(3);
     }
@@ -43,7 +48,7 @@ export default async function Learning() {
                 {user.role === "teacher" && (
                     <div className="flex flex-col px-7 py-3">
                         <h1 className="text-xl mb-3 font-medium">Statistics</h1>
-                        <Stats coursesMade={courses.length} />
+                        <Stats coursesMade={coursesMade.length} />
                     </div>
                 )}
                 <div className="flex flex-row px-7 py-3">

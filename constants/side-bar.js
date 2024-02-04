@@ -83,15 +83,15 @@ export const adminLinks = [
     icon: Squares2X2Icon,
   },
   {
-    name: "Students List",
-    link: "/learning/students-list",
+    name: "Users List",
+    link: "/learning/users-list",
     icon: UserIcon,
   },
-  {
-    name: "Teachers List",
-    link: "/learning/teachers-list",
-    icon: UsersIcon,
-  },
+  // {
+  //   name: "Teachers List",
+  //   link: "/learning/teachers-list",
+  //   icon: UsersIcon,
+  // },
   {
     name: "Assign Teachers",
     link: "/learning/assign-teachers",

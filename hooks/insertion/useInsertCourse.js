@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import { supabase } from "@/lib/supabase-client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const useInsertCourse = (teacherId) => {
-    const router = useRouter()
+    const router = useRouter();
     const [isInserting, setIsInserting] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -30,6 +30,16 @@ export const useInsertCourse = (teacherId) => {
                 },
             ])
             .select("id");
+
+        const { data: courses } = await supabase
+            .from("courses")
+            .select("*")
+            .eq("teacher_id", teacherId);
+
+        await supabase
+            .from("teachers")
+            .update({ courses_made: courses.length })
+            .eq("user_id", teacherId);
 
         const id = response.data.at(0).id;
 
@@ -93,7 +103,7 @@ export const useInsertCourse = (teacherId) => {
         }
         if (!isInserting) {
             setIsSubmitting(true);
-            router.push("/learning")
+            router.push("/learning");
         }
         setIsInserting(false);
     };
