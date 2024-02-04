@@ -7,7 +7,6 @@ export const RegisterForm = () => {
     useFormValidation(
       {
         email: "",
-        username: "",
         firstName: "",
         lastName: "",
         password: "",
@@ -41,24 +40,6 @@ export const RegisterForm = () => {
         />
         {errors.email && (
           <p className="text-sm text-red-400 px-2">{errors.email}</p>
-        )}
-      </div>
-      <div className="flex flex-col mb-4">
-        <h2 className="mb-1 text-sm text-zinc-500 font-medium">Username</h2>
-        <input
-          className={`border rounded-md px-2 py-1 ${
-            errors.username && "border-red-300"
-          }`}
-          id="username"
-          name="username"
-          placeholder="Enter here"
-          type="text"
-          minLength="6"
-          value={values.username}
-          onChange={handleFormChange}
-        />
-        {errors.username && (
-          <p className="text-sm text-red-400 px-2">{errors.username}</p>
         )}
       </div>
       <div className="flex flex-row justify-between">
