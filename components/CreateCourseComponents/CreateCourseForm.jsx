@@ -13,6 +13,7 @@ export const CreateCourseForm = ({
     teacherId,
     handleChangeActivePart,
     activePart,
+    assignedSubject,
 }) => {
     const {
         values: detailValues,
@@ -24,7 +25,7 @@ export const CreateCourseForm = ({
         title: "",
         description: "",
         score: "",
-        subject: "",
+        subject: assignedSubject,
         thumbnail: "",
     });
 
@@ -79,6 +80,7 @@ export const CreateCourseForm = ({
                     errors={detailErrors}
                     handleDetailsFormChange={handleDetailsFormChange}
                     handleDetailsFormSubmit={handleDetailsFormSubmit}
+                    assignedSubject={assignedSubject}
                 />
             ) : activePart === 1 ? (
                 <SectionsPart

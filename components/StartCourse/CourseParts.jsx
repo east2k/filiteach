@@ -23,7 +23,7 @@ export const CourseParts = ({
 
     useEffect(() => {
         const grabData = async () => {
-            if (role === "teacher") {
+            if (role === "teacher" || role === "admin") {
                 setUserProgress(newData);
                 return;
             }
@@ -51,7 +51,8 @@ export const CourseParts = ({
     };
 
     const handleChapterAvailability = (chapterIndex) => {
-        if (role === "teacher") {
+        if (role === "teacher" || role === "admin") {
+            console.log(role);
             return false;
         }
         const check = userProgress[chapterIndex - 1];
@@ -94,7 +95,8 @@ export const CourseParts = ({
                                         key={index}
                                         className={`flex flex-col cursor-pointer rounded-md text-white justify-center bg-mantis-700 border border-white px-3 py-2 w-full h-32 ${
                                             item.finishedChapter ||
-                                            role === "teacher"
+                                            role === "teacher" ||
+                                            role === "admin"
                                                 ? "opacity-100"
                                                 : "opacity-50"
                                         } ${
@@ -122,7 +124,7 @@ export const CourseParts = ({
                                 );
                             })}
                         </div>
-                        {role !== "teacher" && (
+                        {(role !== "teacher" && role !== "admin") && (
                             <div className="border-t py-5">
                                 <h1 className="text-2xl font-medium">
                                     Current Progress

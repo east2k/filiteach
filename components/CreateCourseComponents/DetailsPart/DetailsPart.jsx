@@ -6,6 +6,7 @@ export const DetailsPart = ({
     errors,
     handleDetailsFormChange,
     handleDetailsFormSubmit,
+    assignedSubject,
 }) => {
     return (
         <>
@@ -39,10 +40,11 @@ export const DetailsPart = ({
                     <p className="text-sm text-red-400">{errors.subject}</p>
                 )}
                 <h2 className="pb-1">Subject:</h2>
-                <SubjectRadio
+                <p className="mx-2 capitalize">{assignedSubject}</p>
+                {/* <SubjectRadio
                     values={values}
                     handleDetailsFormChange={handleDetailsFormChange}
-                />
+                /> */}
             </div>
             <div>
                 {errors.thumbnail && (

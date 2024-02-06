@@ -1,24 +1,28 @@
+const {
+    BookOpenIcon,
+    FolderIcon,
+    PaperClipIcon,
+} = require("@heroicons/react/20/solid");
 
-const statList = [
-    {
-        label: "Total Learning Materials Made",
-        amount: 10,
-        icon: "Icon",
-    },
-    {
-        label: "Total Students Enrolled",
-        amount: 100,
-        icon: "Icon",
-    },
-    {
-        label: "Total Assigned Learning Materials",
-        amount: 10,
-        icon: "Icon",
-    },
-];
+export const Stats = ({ coursesMade, ownData }) => {
 
-export const Stats = ({ coursesMade }) => {
-    const courseStats= [coursesMade,0,0]
+    const statList = [
+        {
+            label: "Subject Assigned",
+            amount: ownData.subject_assigned,
+            icon: <BookOpenIcon width={20} />,
+        },
+        {
+            label: "Active Learning Materials Made",
+            amount: coursesMade,
+            icon: <PaperClipIcon width={20} />,
+        },
+        {
+            label: "Archived Learning Materials",
+            amount: 0,
+            icon: <FolderIcon width={20} />,
+        },
+    ];
     return (
         <div className="grid grid-cols-3 gap-5">
             {statList.map((item, index) => {
@@ -31,7 +35,9 @@ export const Stats = ({ coursesMade }) => {
                             {item.icon}
                         </div>
                         <h1 className="text-sm font-medium">{item.label}</h1>
-                        <p className="text-lg font-bold">{courseStats[index]}</p>
+                        <p className="text-lg font-bold capitalize">
+                            {item.amount}
+                        </p>
                     </div>
                 );
             })}

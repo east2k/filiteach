@@ -48,12 +48,27 @@ export const useHandleRetrieveUsers = async () => {
         return formatData;
     };
 
+    const retrieveOwnData = async (userID) => {
+        const { data: teachers, error } = await supabase
+            .from("teachers")
+            .select("*")
+            .eq("user_id", userID);
+        const formatData = teachers.map(mapData);
+        return formatData;
+    };
+
+    const refetchData = (action) =>{
+        return action;
+    }
+
     return {
         retrieveRecentTeachers,
         retrieveRecentStudents,
         retrieveAllTeachers,
         retrieveAllStudents,
         retrieveTeachersWithNoSubject,
+        retrieveOwnData,
+        refetchData
     };
 };
 

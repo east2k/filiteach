@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CreateCourseForm } from "./CreateCourseForm";
 import { CreateCourseHeader } from "./CreateCourseHeader";
 
-export const CreateCourseContainer = ({ teacherId }) => {
+export const CreateCourseContainer = ({ teacherId, assignedSubject }) => {
     const [activePart, setActivePart] = useState(0);
 
     const handleChangeActivePart = (action) => {
@@ -27,6 +27,7 @@ export const CreateCourseContainer = ({ teacherId }) => {
                     teacherId={teacherId}
                     handleChangeActivePart={handleChangeActivePart}
                     activePart={activePart}
+                    assignedSubject={assignedSubject}
                 />
             </div>
         </>

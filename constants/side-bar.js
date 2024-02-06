@@ -64,11 +64,11 @@ export const teachLinks = [
     link: "/learning/create-course",
     icon: FolderPlusIcon,
   },
-  // {
-  //   name: "Assign Learning Materials",
-  //   link: "#",
-  //   icon: UserPlusIcon,
-  // },
+  {
+    name: "Data Visualization",
+    link: "/learning/data-visualization",
+    icon: UserPlusIcon,
+  },
   {
     name: "Help",
     link: "#",

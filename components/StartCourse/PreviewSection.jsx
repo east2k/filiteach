@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export const PreviewSection = ({ thumbnail, summary, runtime, status, role }) => {
+export const PreviewSection = ({
+    thumbnail,
+    summary,
+    runtime,
+    status,
+    role,
+}) => {
     return (
         <div className="w-full py-5 border-t mb-10">
             <h1 className="text-2xl mb-5 font-medium">Preview</h1>
@@ -18,7 +24,7 @@ export const PreviewSection = ({ thumbnail, summary, runtime, status, role }) =>
                     <h2 className="font-medium">Summary</h2>
                     <p className="mb-5">{summary}</p>
                     <p className="mt-auto">Runtime: {runtime} mins</p>
-                    {role !== "teacher" && (
+                    {(role !== "teacher" && role !== "admin") && (
                         <>
                             <p>Current Status</p>
                             <div

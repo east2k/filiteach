@@ -17,11 +17,13 @@ export default async function Learning() {
         retrieveRecentTeachers,
         retrieveAllTeachers,
         retrieveAllStudents,
+        retrieveOwnData,
     } = await useHandleRetrieveUsers();
 
-    let courses, coursesMade;
+    let courses, coursesMade, ownData;
     if (user.role === "teacher") {
         coursesMade = await getOwnCourses(user.id);
+        ownData = await retrieveOwnData(user.id);
         courses = await getOwnCoursesLimited(user.id);
     } else {
         courses = await getLimitedCourses(3);
@@ -48,7 +50,10 @@ export default async function Learning() {
                 {user.role === "teacher" && (
                     <div className="flex flex-col px-7 py-3">
                         <h1 className="text-xl mb-3 font-medium">Statistics</h1>
-                        <Stats coursesMade={coursesMade.length} />
+                        <Stats
+                            coursesMade={coursesMade.length}
+                            ownData={ownData[0]}
+                        />
                     </div>
                 )}
                 <div className="flex flex-row px-7 py-3">

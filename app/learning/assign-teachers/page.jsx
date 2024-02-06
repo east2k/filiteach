@@ -5,11 +5,12 @@ import { redirect } from "next/navigation";
 
 export default async function AssignTeachers() {
     const user = await useGetUser();
-    const { retrieveTeachersWithNoSubject } = await useHandleRetrieveUsers();
+    const { retrieveTeachersWithNoSubject, refetchData } = await useHandleRetrieveUsers();
     if (user.role !== "admin") {
         return redirect("/learning");
     }
-
+    const action = refetchData(true);
+    
     const teachers = await retrieveTeachersWithNoSubject();
 
     return <AssignTeacher teachers={teachers} />;

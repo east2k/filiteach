@@ -39,7 +39,11 @@ export const PartContent = ({
             setFinished(foundProgress.finishedChapter);
             setObjectData(data);
         };
-        if (!objectData.length && user.role !== "teacher") {
+        if (
+            !objectData.length &&
+            user.role !== "teacher" &&
+            user.role !== "admin"
+        ) {
             loadData();
         }
     }, [
@@ -69,7 +73,7 @@ export const PartContent = ({
     };
     return (
         <div className="relative p-5">
-            {user.role !== "teacher" && (
+            {user.role !== "teacher" && user.role !== "admin" && (
                 <>
                     {(updating || !objectData.length) && (
                         <div className="fixed w-full h-full z-10 left-0 top-0 bg-gray-400 bg-opacity-50 flex items-center justify-center">
@@ -90,7 +94,7 @@ export const PartContent = ({
             <div className="">
                 <div className="flex flex-row justify-between border-b pb-2 mb-5">
                     <h1 className="text-xl">Chapter {part}</h1>
-                    {user.role !== "teacher" && (
+                    {user.role !== "teacher" && user.role !== "admin" && (
                         <div
                             className={`flex items-center justify-center px-2 py-1 rounded-md ${
                                 finished ? "bg-mantis-200" : "bg-red-200"
@@ -121,15 +125,16 @@ export const PartContent = ({
                 )}
             </div>
             <div className="flex flex-col fixed right-5 bottom-5">
-                {user.role === "teacher" && !nextChapterValidation && (
-                    <NextChapterLink
-                        title={title}
-                        courseID={courseID}
-                        part={part}
-                        teacher={teacher}
-                        type={"not-valid"}
-                    />
-                )}
+                {(user.role === "teacher" || user.role === "admin") &&
+                    !nextChapterValidation && (
+                        <NextChapterLink
+                            title={title}
+                            courseID={courseID}
+                            part={part}
+                            teacher={teacher}
+                            type={"not-valid"}
+                        />
+                    )}
                 {finished && !nextChapterValidation && (
                     <NextChapterLink
                         title={title}
