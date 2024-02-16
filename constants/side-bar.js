@@ -1,6 +1,7 @@
 import {
   BookOpenIcon,
   CalendarIcon,
+  DocumentChartBarIcon,
   FolderIcon,
   FolderPlusIcon,
   MapIcon,
@@ -65,11 +66,6 @@ export const teachLinks = [
     icon: FolderPlusIcon,
   },
   {
-    name: "Data Visualization",
-    link: "/learning/data-visualization",
-    icon: UserPlusIcon,
-  },
-  {
     name: "Help",
     link: "#",
     icon: QuestionMarkCircleIcon,
@@ -101,6 +97,11 @@ export const adminLinks = [
     name: "All Learning Materials",
     link: "/learning/courses",
     icon: BookOpenIcon,
+  },
+  {
+    name: "Data Report",
+    link: "/learning/data-report",
+    icon: DocumentChartBarIcon,
   },
   {
     name: "Help",
