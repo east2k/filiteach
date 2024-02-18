@@ -3,23 +3,28 @@ import Logo from "./Logo";
 import { useGetUser } from "@/hooks/retrieve/useGetUser";
 import { studentLinks, teachLinks, adminLinks } from "@/constants/side-bar";
 import LogoutButton from "./CredentialComponents/LogoutButton";
-import { RectangleStackIcon } from "@heroicons/react/20/solid";
+import { RectangleStackIcon, UserIcon } from "@heroicons/react/20/solid";
 import { GPTModal } from "./GPTModal";
 import ChatBotButton from "./ChatBotButton";
+import Image from "next/image";
+import ChangeProfile from "./ChangeProfile";
 
 const SideBar = async () => {
     const user = await useGetUser();
     if (!user) return;
 
     return (
-        <div className="flex flex-col h-screen min-w-[300px] py-3 px-3 border-r">
+        <div className="flex flex-col h-screen min-w-[300px] py-3 px-3 border-r relative">
             <div className="px-1">
                 <Logo />
             </div>
-            <div className="border mt-10">
-                Name: {user.first_name} {user.last_name}
-            </div>
-            <div className="border capitalize">Role: {user.role}</div>
+            <ChangeProfile
+                userID={user.id}
+                profileImage={user.profile_image}
+                firstName={user.first_name}
+                lastName={user.last_name}
+                role={user.role}
+            />
             <Links
                 links={
                     user.role === "student"

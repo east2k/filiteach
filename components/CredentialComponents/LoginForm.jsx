@@ -63,8 +63,11 @@ export const LoginForm = () => {
       {errors.matchingUser && (
         <p className="text-center text-red-400">{errors.matchingUser}</p>
       )}
-      <button className="bg-mantis-400 text-white px-5 py-2 rounded-md">
-        Login
+      <button className="bg-mantis-400 mb-1 text-white px-5 py-2 rounded-md">
+        Login as a Student
+      </button>
+      <button className="bg-mantis-400 mb-1 text-white px-5 py-2 rounded-md">
+        Login as a Teacher
       </button>
     </form>
   );

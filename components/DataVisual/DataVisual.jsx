@@ -57,7 +57,7 @@ const DataVisual = () => {
                             onClick={() => handleExportData(userBarRef)}
                             className="float-right px-3 py-1 bg-mantis-500 text-white"
                         >
-                            Export Users Data
+                            Export
                         </button>
                     </div>
                     <div className="w-2/5 border border-mantis-500 p-2">
@@ -66,7 +66,7 @@ const DataVisual = () => {
                             onClick={() => handleExportData(materialsBarRef)}
                             className="float-right px-3 py-1 bg-mantis-500 text-white"
                         >
-                            Export Materials Data
+                            Export
                         </button>
                     </div>
                 </div>
