@@ -71,6 +71,7 @@ const UsersList = ({ allStudents, allTeachers }) => {
                         value={searchQuery}
                         onChange={handleSearch}
                         className="px-3 py-1 w-11/12 outline-none "
+                        autoComplete={true}
                     />
                 </label>
             </div>

@@ -1,24 +1,7 @@
+import React from "react";
 import { Bar } from "react-chartjs-2";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-} from "chart.js";
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
-);
-
-const MaterialsBar = ({ materialsBarRef }) => {
+const BarChart = ({ chartRef, handleExportData }) => {
     const labels = ["First Semester"];
 
     const options = {
@@ -71,12 +54,19 @@ const MaterialsBar = ({ materialsBarRef }) => {
             },
         ],
     };
-
     return (
-        <div className="flex flex-col my-3 w-full bg-white">
-            <Bar ref={materialsBarRef} options={options} data={data} />
+        <div className="w-2/5 border border-mantis-500 p-2">
+            <div className="flex flex-col my-3 w-full bg-white">
+                <Bar ref={chartRef} options={options} data={data} />
+            </div>
+            <button
+                onClick={() => handleExportData(chartRef)}
+                className="float-right px-3 py-1 bg-mantis-500 text-white"
+            >
+                Export
+            </button>
         </div>
     );
 };
 
-export default MaterialsBar;
+export default BarChart;
