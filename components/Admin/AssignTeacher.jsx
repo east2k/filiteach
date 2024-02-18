@@ -1,6 +1,6 @@
 "use client";
 
-import { PlusCircleIcon } from "@heroicons/react/20/solid";
+import { MagnifyingGlassIcon, PlusCircleIcon } from "@heroicons/react/20/solid";
 import { useEffect, useState } from "react";
 import AssignModal from "./AssignModal";
 import useHandleUpdateTeacher from "@/hooks/handlers/useHandleUpdateTeacher";
@@ -13,6 +13,8 @@ const AssignTeacher = ({ teachers }) => {
     const [chosenUser, setChosenUser] = useState();
     const [teachersList, setTeachersList] = useState([]);
     const [totalList, setTotalList] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
+
 
     const { updateSubject, updating, updatedTeachers, totalUpdatedTeachers } =
         useHandleUpdateTeacher();
@@ -55,6 +57,21 @@ const AssignTeacher = ({ teachers }) => {
         if (updating) return;
         updateSubject(chosenUser, subject);
     };
+
+    const handleSearch = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+    const filteredUsers =totalList.filter(
+                  (user) =>
+                      user.first_name
+                          .toLowerCase()
+                          .includes(searchQuery.toLowerCase()) ||
+                      user.last_name
+                          .toLowerCase()
+                          .includes(searchQuery.toLowerCase())
+              );
+
 
     return (
         <div className="relative px-5 py-2 h-full w-full">
@@ -115,6 +132,17 @@ const AssignTeacher = ({ teachers }) => {
             </div>
             <div className="h-2/3 flex flex-col">
                 <h1 className="text-3xl mb-5">Re-assign teachers</h1>
+                <label htmlFor="search" className="relative ml-auto border border-black rounded-md overflow-hidden mb-2">
+                    <MagnifyingGlassIcon className="absolute top-1/2 -translate-y-1/2 right-2 w-5"/>
+                    <input
+                        id="search"
+                        type="text"
+                        placeholder="Search users..."
+                        value={searchQuery}
+                        onChange={handleSearch}
+                        className="px-3 py-1 w-11/12 outline-none "
+                    />
+                </label>
                 <div className="grid grid-cols-12 border border-mantis-400  px-5 py-2">
                     <p className="text-lg col-span-1">#</p>
                     <p className="text-lg col-span-3">Name</p>
@@ -125,7 +153,7 @@ const AssignTeacher = ({ teachers }) => {
                     <p className="text-lg col-span-2 ml-auto">Assign</p>
                 </div>
                 <div className="max-h-[80%] overflow-auto">
-                    {totalList.map((items, index) => {
+                    {filteredUsers.map((items, index) => {
                         if (items.subject_assigned === null) return;
                         return (
                             <div
