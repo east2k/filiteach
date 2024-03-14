@@ -15,7 +15,6 @@ const AssignTeacher = ({ teachers }) => {
     const [totalList, setTotalList] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
 
-
     const { updateSubject, updating, updatedTeachers, totalUpdatedTeachers } =
         useHandleUpdateTeacher();
 
@@ -62,16 +61,11 @@ const AssignTeacher = ({ teachers }) => {
         setSearchQuery(event.target.value);
     };
 
-    const filteredUsers =totalList.filter(
-                  (user) =>
-                      user.first_name
-                          .toLowerCase()
-                          .includes(searchQuery.toLowerCase()) ||
-                      user.last_name
-                          .toLowerCase()
-                          .includes(searchQuery.toLowerCase())
-              );
-
+    const filteredUsers = totalList.filter(
+        (user) =>
+            user.first_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            user.last_name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
         <div className="relative px-5 py-2 h-full w-full">
@@ -132,8 +126,11 @@ const AssignTeacher = ({ teachers }) => {
             </div>
             <div className="h-2/3 flex flex-col">
                 <h1 className="text-3xl mb-5">Re-assign teachers</h1>
-                <label htmlFor="search" className="relative ml-auto border border-black rounded-md overflow-hidden mb-2">
-                    <MagnifyingGlassIcon className="absolute top-1/2 -translate-y-1/2 right-2 w-5"/>
+                <label
+                    htmlFor="search"
+                    className="relative ml-auto border border-black rounded-md overflow-hidden mb-2"
+                >
+                    <MagnifyingGlassIcon className="absolute top-1/2 -translate-y-1/2 right-2 w-5" />
                     <input
                         id="search"
                         type="text"
@@ -141,6 +138,7 @@ const AssignTeacher = ({ teachers }) => {
                         value={searchQuery}
                         onChange={handleSearch}
                         className="px-3 py-1 w-11/12 outline-none "
+                        autocomplete="off"
                     />
                 </label>
                 <div className="grid grid-cols-12 border border-mantis-400  px-5 py-2">

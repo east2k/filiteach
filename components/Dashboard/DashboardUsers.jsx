@@ -15,7 +15,7 @@ const DashboardUsers = ({ user, courses }) => {
             <div className="flex flex-col">
                 {user.role === "student" && <p>Recommended for you</p>}
                 <div className="flex flex-col border  border-mantis-500 rounded-lg px-3 py-5">
-                    <div className="grid grid-cols-3 gap-5">
+                    <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
                         {courses.length !== 0 ? (
                             <>
                                 {courses.map((item, index) => {
@@ -47,7 +47,7 @@ const DashboardUsers = ({ user, courses }) => {
                 <div className="mt-5 border border-mantis-500 px-5 py-3">
                     <h1>
                         {user.role === "student"
-                            ? "Continue where you left of before"
+                            ? "Latest learning material made"
                             : "Latest learning material you made"}
                     </h1>
                     {courses.length !== 0 ? (
@@ -80,12 +80,12 @@ const DashboardUsers = ({ user, courses }) => {
                                     Estimate time to Finish:{" "}
                                     {latestCourse.score} mins
                                 </p>
-                                <Link
+                                {/* <Link
                                     href="/learning/courses/test2"
                                     className="ml-auto px-4 py-2 text-white bg-mantis-400 rounded-sm"
                                 >
                                     Continue
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     ) : (

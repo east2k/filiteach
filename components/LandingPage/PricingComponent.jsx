@@ -11,12 +11,12 @@ const PricingComponent = () => {
         <h1 className="text-6xl text-center font-bold border-b border-b-mantis-500 w-fit mb-7">
           Pricing
         </h1>
-        <div className="flex flex-row gap-10">
+        <div className="flex md:flex-row flex-col gap-10">
           {pricingList.map((item, index) => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-start card w-1/3 border rounded-xl p-10 bg-white"
+                className="flex flex-col items-start card w-full md:w-1/3 border rounded-xl p-10 bg-white"
               >
                 <h2 className="text-xl uppercase tracking-widest mb-5 text-center w-full">
                   {item.name}

@@ -117,7 +117,7 @@ export const QuizSection = ({ handleSubmitQuizForm }) => {
             <button
                 type="button"
                 onClick={() => handleToggleAddQuestion("open")}
-                className="border py-1 px-3 mb-2 bg-mantis-500 hover:bg-mantis-400 text-white rounded-sm"
+                className="border py-1 px-3 mb-2 bg-mantis-500 hover:bg-mantis-400 text-white rounded-sm text-3xl md:text-base my-2"
             >
                 Add Question
             </button>

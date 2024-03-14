@@ -25,7 +25,7 @@ const ExpandCourse = ({ user, data, newData }) => {
     }, [user.id, data.id, checkIfEnrolled]);
 
     return (
-        <div className="relative flex flex-row px-7 py-5 w-full h-full">
+        <div className="relative flex flex-row px-7 py-5 w-full h-full md:my-auto my-16">
             {enrolling && (
                 <div className="fixed z-10 flex justify-center items-center bg-slate-400 w-full h-full top-0 left-0 bg-opacity-50">
                     <div className="flex flex-row bg-green-500 px-4 py-2 rounded-md item-center justify-center">

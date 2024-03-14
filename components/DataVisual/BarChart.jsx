@@ -1,8 +1,24 @@
-import React from "react";
 import { Bar } from "react-chartjs-2";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from "chart.js";
 
-const BarChart = ({ chartRef, handleExportData }) => {
-    const labels = ["First Semester"];
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+);
+const BarChart = ({ barContent, chartRef, handleExportData, total, height }) => {
+    const labels = barContent.labels;
 
     const options = {
         responsive: true,
@@ -12,7 +28,7 @@ const BarChart = ({ chartRef, handleExportData }) => {
             },
             title: {
                 display: true,
-                text: "Total Number of Learning Materials",
+                text: barContent.title,
             },
             tooltip: {
                 callbacks: {
@@ -22,42 +38,27 @@ const BarChart = ({ chartRef, handleExportData }) => {
                             label += ": ";
                         }
                         if (context.parsed.y !== null) {
-                            label +=
-                                context.parsed.y +
-                                " (" +
-                                context.parsed.y * 5 +
-                                "%)";
+                            const percentage = (context.parsed.y / total) * 100;
+                            label += `${context.parsed.y} (${percentage.toFixed(
+                                2
+                            )}%)`;
                         }
                         return label;
                     },
                 },
             },
         },
+    
     };
     const data = {
         labels,
-        datasets: [
-            {
-                label: "Number of Learning Materials",
-                data: [20],
-                backgroundColor: "rgb(106 178 255)",
-            },
-            {
-                label: "Number of Quizes",
-                data: [7],
-                backgroundColor: "rgb(255 106 106)",
-            },
-            {
-                label: "Number of Videos",
-                data: [13],
-                backgroundColor: "rgb(255 106 106)",
-            },
-        ],
+        datasets: barContent.dataset,
     };
     return (
-        <div className="w-2/5 border border-mantis-500 p-2">
+        <div className="w-4/5 border border-mantis-500 p-2">
             <div className="flex flex-col my-3 w-full bg-white">
-                <Bar ref={chartRef} options={options} data={data} />
+                Total: {total}
+                <Bar ref={chartRef} options={options} data={data} height={height}/>
             </div>
             <button
                 onClick={() => handleExportData(chartRef)}

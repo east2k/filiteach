@@ -21,7 +21,7 @@ export const LoginForm = () => {
         <p className="text-green-500 mb-4 text-center">Register Successful</p>
       )}
       <div className="flex flex-col mb-4">
-        <h2 className="mb-1 text-sm text-zinc-500 font-medium">Email</h2>
+        <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">Email</h2>
         <input
           className={`border rounded-md px-2 py-1 ${
             errors.email && "border-red-300"
@@ -38,7 +38,7 @@ export const LoginForm = () => {
         )}
       </div>
       <div className="flex flex-col mb-4">
-        <h2 className="mb-1 text-sm text-zinc-500 font-medium">Password</h2>
+        <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">Password</h2>
         <input
           className={`border rounded-md px-2 py-1 ${
             errors.password && "border-red-300"

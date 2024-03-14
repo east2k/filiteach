@@ -9,7 +9,6 @@ const UsersList = ({ allStudents, allTeachers }) => {
     const [searchQuery, setSearchQuery] = useState("");
 
     const handleChangeTable = (table) => {
-        console.log(table);
         setChangeTable(table);
     };
 
@@ -62,8 +61,11 @@ const UsersList = ({ allStudents, allTeachers }) => {
                 >
                     Teachers
                 </button>
-                <label htmlFor="search" className="relative ml-auto border border-black rounded-md overflow-hidden">
-                    <MagnifyingGlassIcon className="absolute top-1/2 -translate-y-1/2 right-2 w-5"/>
+                <label
+                    htmlFor="search"
+                    className="relative ml-auto border border-black rounded-md overflow-hidden"
+                >
+                    <MagnifyingGlassIcon className="absolute top-1/2 -translate-y-1/2 right-2 w-5" />
                     <input
                         id="search"
                         type="text"
@@ -71,7 +73,7 @@ const UsersList = ({ allStudents, allTeachers }) => {
                         value={searchQuery}
                         onChange={handleSearch}
                         className="px-3 py-1 w-11/12 outline-none "
-                        autoComplete={true}
+                        autocomplete="off"
                     />
                 </label>
             </div>
@@ -99,9 +101,24 @@ const UsersList = ({ allStudents, allTeachers }) => {
                             >
                                 <p className="text-left text-sm">
                                     {items.first_name} {items.last_name}
+                                </p>{" "}
+                                <p
+                                    className={`text-left text-sm capitalize ${
+                                        !items.subject_assigned &&
+                                        "text-red-800"
+                                    }`}
+                                >
+                                    {changeTable === "students"
+                                        ? 0
+                                        : !items?.subject_assigned
+                                        ? "None"
+                                        : items.subject_assigned}
                                 </p>
-                                <p className="text-left text-sm">5</p>
-                                <p className="text-left text-sm">5</p>
+                                <p className="text-left text-sm">
+                                    {changeTable === "students"
+                                        ? 0
+                                        : items?.courses_made}
+                                </p>
                                 <p className="text-left text-sm">
                                     {items.registration_date}
                                 </p>

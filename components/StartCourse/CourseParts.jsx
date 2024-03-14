@@ -81,11 +81,11 @@ export const CourseParts = ({
                 </div>
             ) : (
                 <>
-                    <div className="border p-5 m-2">
+                    <div className="border p-5 md:m-2 mt-20">
                         <h1 className="text-2xl text-center mb-5 font-medium">
                             {title}
                         </h1>
-                        <div className="grid grid-cols-6 gap-5 items-center mb-10">
+                        <div className="grid grid-cols-1 md:grid-cols-6 gap-5 items-center mb-10">
                             {userProgress.map((item, index) => {
                                 return (
                                     <button
@@ -149,7 +149,7 @@ export const CourseParts = ({
                             />
                         )}
                     </div>
-                    <div className="flex flex-row justify-end gap-5">
+                    <div className="flex flex-row justify-end gap-5 m-5">
                         {!preview ? (
                             <Link
                                 href="#"

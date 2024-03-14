@@ -13,7 +13,7 @@ const FeaturesComponent = () => {
             return (
               <div
                 key={index}
-                className="flex flex-row rounded-xl w-3/5 overflow-hidden even:ml-auto h-52"
+                className="flex md:flex-row flex-col rounded-xl w-3/5 overflow-hidden even:ml-auto h-52"
               >
                 <div className="flex justify-center items-center min-w-max max-w-fit overflow-hidden">
                   <Image

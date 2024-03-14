@@ -39,7 +39,7 @@ const MaterialsPage = ({ data, featuredCourses }) => {
             <div className="flex flex-col border p-3">
                 {currentDisplayed !== "none" ? (
                     <>
-                        <div className="flex flex-row justify-between mb-3">
+                        <div className="flex flex-row justify-between mb-3 md:mt-auto mt-10">
                             <div className="relative w-1/3">
                                 <input
                                     type="text"
@@ -60,7 +60,7 @@ const MaterialsPage = ({ data, featuredCourses }) => {
                         />
                     </>
                 ) : (
-                    <div className="grid grid-cols-4 gap-5 mb-5">
+                    <div className="grid  grid-cols-1 md:grid-cols-4 gap-5 mb-5">
                         <div
                             onClick={() => handleChangeCourseDisplay("english")}
                             className="cursor-pointer flex items-center justify-center border border-mantis-400 hover:bg-mantis-100 h-64 px-7 py-5 rounded-lg"

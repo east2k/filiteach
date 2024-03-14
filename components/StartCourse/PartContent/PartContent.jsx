@@ -72,7 +72,7 @@ export const PartContent = ({
         updateUserProgress(user.id, courseID, currentData);
     };
     return (
-        <div className="relative p-5">
+        <div className="relative p-5 mt-16">
             {user.role !== "teacher" && user.role !== "admin" && (
                 <>
                     {(updating || !objectData.length) && (

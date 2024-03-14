@@ -25,7 +25,7 @@ export const RegisterForm = () => {
         <p className="text-green-500 mb-4 text-center">Register Successful</p>
       )}
       <div className="flex flex-col mb-4">
-        <h2 className="mb-1 text-sm text-zinc-500 font-medium">Email</h2>
+        <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">Email</h2>
         <input
           className={`border rounded-md px-2 py-1 ${
             errors.email && "border-red-300"
@@ -44,7 +44,7 @@ export const RegisterForm = () => {
       </div>
       <div className="flex flex-row justify-between">
         <div className="flex flex-col mb-4">
-          <h2 className="mb-1 text-sm text-zinc-500 font-medium">First Name</h2>
+          <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">First Name</h2>
           <input
             className={`border rounded-md px-2 py-1 ${
               errors.firstName && "border-red-300"
@@ -62,7 +62,7 @@ export const RegisterForm = () => {
         </div>
 
         <div className="flex flex-col mb-4">
-          <h2 className="mb-1 text-sm text-zinc-500 font-medium">Last Name</h2>
+          <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">Last Name</h2>
           <input
             className={`border rounded-md px-2 py-1 ${
               errors.lastName && "border-red-300"
@@ -80,7 +80,7 @@ export const RegisterForm = () => {
         </div>
       </div>
       <div className="flex flex-col mb-4">
-        <h2 className="mb-1 text-sm text-zinc-500 font-medium">Password</h2>
+        <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">Password</h2>
         <input
           className={`border rounded-md px-2 py-1 ${
             errors.password && "border-red-300"
@@ -97,7 +97,7 @@ export const RegisterForm = () => {
         )}
       </div>
       <div className="flex flex-col mb-4">
-        <h2 className="mb-1 text-sm text-zinc-500 font-medium">
+        <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">
           Confirm Password
         </h2>
         <input
@@ -116,7 +116,7 @@ export const RegisterForm = () => {
         )}
       </div>
       <div className="flex flex-col mb-4">
-        <h2 className="mb-1 text-sm text-zinc-500 font-medium">Role:</h2>
+        <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">Role:</h2>
         <div className="flex justify-evenly">
           <div className="flex flex-row items-center">
             <input

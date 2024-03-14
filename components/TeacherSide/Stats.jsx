@@ -5,11 +5,12 @@ const {
 } = require("@heroicons/react/20/solid");
 
 export const Stats = ({ coursesMade, ownData }) => {
-
     const statList = [
         {
             label: "Subject Assigned",
-            amount: ownData.subject_assigned,
+            amount: !ownData.subject_assigned
+                ? "None"
+                : ownData.subject_assigned,
             icon: <BookOpenIcon width={20} />,
         },
         {
@@ -24,7 +25,7 @@ export const Stats = ({ coursesMade, ownData }) => {
         },
     ];
     return (
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid  grid-cols-1 md:grid-cols-3 gap-5">
             {statList.map((item, index) => {
                 return (
                     <div
@@ -34,7 +35,7 @@ export const Stats = ({ coursesMade, ownData }) => {
                         <div className="flex justify-center items-center bg-mantis-500 text-white border rounded-full w-8 h-8 text-xs mb-5">
                             {item.icon}
                         </div>
-                        <h1 className="text-sm font-medium">{item.label}</h1>
+                        <h1 className="text-sm font-medium text-center">{item.label}</h1>
                         <p className="text-lg font-bold capitalize">
                             {item.amount}
                         </p>

@@ -15,7 +15,7 @@ const QuizContent = ({
 
                 return (
                     <div key={questionIndex} className="flex flex-col my-2">
-                        <p>
+                        <p className="md:text-base text-3xl">
                             {questionIndex + 1}. {item.question}
                         </p>
                         <div className="flex flex-col gap-1">
@@ -26,7 +26,7 @@ const QuizContent = ({
                                 return (
                                     <div
                                         key={answerIndex}
-                                        className={`cursor-pointer py-1 px-2 border rounded-md w-full ${
+                                        className={`cursor-pointer py-1 px-2 border rounded-md w-full md:text-base text-2xl ${
                                             isSelected
                                                 ? submitted
                                                     ? answerIndex ===

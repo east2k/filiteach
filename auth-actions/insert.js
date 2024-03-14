@@ -12,7 +12,6 @@ export const insert = async (form) => {
                 username: form.username,
                 first_name: form.firstName,
                 last_name: form.lastName,
-                profile_image: "/assets/images/feature-placeholder.jpeg",
                 role: form.role,
             },
         },

@@ -23,7 +23,7 @@ export const SectionsPart = ({
                 Adding chapters to your learning material
             </h1>
             {!showOptions && (
-                <div className="grid grid-cols-5 gap-5 mb-7">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-5 mb-7">
                     {currentSections.map((item, index) => {
                         let displayThumbnail;
                         if (
@@ -50,8 +50,8 @@ export const SectionsPart = ({
                         onClick={handleShowOptions}
                         className="cursor-pointer flex flex-col items-center justify-center border border-mantis-500 px-2 py-4 rounded-lg"
                     >
-                        <PlusCircleIcon className="text-mantis-500 w-5" />
-                        <p>Add chapter</p>
+                        <PlusCircleIcon className="text-mantis-500 md:w-5 w-10" />
+                        <p className="text-2xl md:text-base">Add chapter</p>
                     </div>
                 </div>
             )}
@@ -69,7 +69,7 @@ export const SectionsPart = ({
                     <div className="flex flex-row justify-center gap-7">
                         <div
                             onClick={() => handleActiveSection("video")}
-                            className="cursor-pointer border border-mantis-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/4"
+                            className="cursor-pointer border border-mantis-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/2 md:w-1/4"
                         >
                             <div className="flex flex-col justify-center items-center">
                                 <VideoCameraIcon className="w-7 text-mantis-500" />
@@ -80,7 +80,7 @@ export const SectionsPart = ({
                         </div>
                         <div
                             onClick={() => handleActiveSection("quiz")}
-                            className="cursor-pointer border border-mantis-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/4"
+                            className="cursor-pointer border border-mantis-500 hover:opacity-80 rounded-lg px-2 py-4 w-1/2 md:w-1/4"
                         >
                             <div className="flex flex-col justify-center items-center">
                                 <BookOpenIcon className="w-7 text-mantis-500" />

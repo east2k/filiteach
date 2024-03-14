@@ -12,12 +12,12 @@ const DiscoverComponent = () => {
         <h1 className="text-6xl text-center font-bold w-fit mb-7">
           What do we teach?
         </h1>
-        <div className="flex flex-row gap-10">
+        <div className="flex flex-col md:flex-row gap-10">
           {homeTeachList.map((item, index) => {
             return (
               <div
                 key={index}
-                className="w-1/3 rounded-xl border  px-7 py-5 bg-white"
+                className="w-full md:w-1/3 rounded-xl border  px-7 py-5 bg-white"
               >
                 <div className="flex flex-row items-center mb-5">
                   <Image

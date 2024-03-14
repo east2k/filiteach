@@ -105,7 +105,7 @@ export const CreateCourseForm = ({
                     {activePart !== 0 && (
                         <button
                             onClick={() => handleChangeActivePart("previous")}
-                            className="hover:bg-mantis-200 w-28 py-1 rounded-sm border border-mantis-400"
+                            className="hover:bg-mantis-200 md:w-28 w-auto py-1 rounded-sm border border-mantis-400 md:text-base text-4xl "
                             type="button"
                         >
                             Previous
@@ -115,7 +115,7 @@ export const CreateCourseForm = ({
                         <>
                             <button
                                 onClick={() => handleChangeActivePart("next")}
-                                className={` text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm ${
+                                className={` text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm md:text-base text-4xl ${
                                     status ? "bg-mantis-400" : "bg-mantis-200"
                                 }`}
                                 type="button"
@@ -129,7 +129,7 @@ export const CreateCourseForm = ({
                         <>
                             <button
                                 onClick={() => handleChangeActivePart("next")}
-                                className={` text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm ${
+                                className={` text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm md:text-base text-4xl ${
                                     currentSections.length
                                         ? "bg-mantis-400"
                                         : "bg-mantis-200"
@@ -143,7 +143,7 @@ export const CreateCourseForm = ({
                     )}
                     {activePart === 2 && (
                         <button
-                            className="bg-mantis-400 text-white hover:bg-mantis-200 hover:text-black w-28 py-1 rounded-sm"
+                            className="bg-mantis-400 text-white hover:bg-mantis-200 hover:text-black w-auto md:w-28 py-1 px-2 rounded-sm  md:text-base text-4xl "
                             type="submit"
                         >
                             Submit

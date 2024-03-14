@@ -90,7 +90,7 @@ export const adminLinks = [
     //   icon: UsersIcon,
     // },
     {
-        name: "Assign Teachers",
+        name: "Teachers Management",
         link: "/learning/assign-teachers",
         icon: UserPlusIcon,
     },
@@ -100,7 +100,7 @@ export const adminLinks = [
         icon: BookOpenIcon,
     },
     {
-        name: "Data Report",
+        name: "Reports",
         link: "/learning/data-report",
         icon: DocumentChartBarIcon,
     },

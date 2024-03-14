@@ -10,7 +10,7 @@ export const CoursesContainer = ({ currentDisplayed, courses }) => {
     };
     
     return (
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
             {!filterCoursesBySubject().length
                 ? <p className="text-xl col-span-4 text-center my-5">No available learning material</p>
                 : filterCoursesBySubject().map((item, index) => {

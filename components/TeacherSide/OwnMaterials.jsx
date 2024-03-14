@@ -12,7 +12,7 @@ const OwnMaterials = ({ courses }) => {
     };
 
     return (
-        <div className="p-5 flex flex-col h-full">
+        <div className="p-5 flex flex-col h-full mt-16 ">
             <div className="flex justify-between mb-5">
                 <h1 className="text-2xl my-2">
                     My {!showArchived ? "Active" : "Archived"} Learning
@@ -33,7 +33,7 @@ const OwnMaterials = ({ courses }) => {
                     }
                 </button>
             </div>
-            <div className="grid grid-cols-4 gap 4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap 4">
                 {courses.length !== 0 ? (
                     <>
                         {courses.map((item, index) => {
