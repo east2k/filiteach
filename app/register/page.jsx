@@ -19,8 +19,8 @@ const Register = async () => {
               Register
             </h1>
             <RegisterForm />
-            <div className="text-xs mt-5 flex flex-row justify-center">
-              <p className="text-3xl">
+            <div className="text-3xl md:text-xs mt-5 flex flex-row justify-center">
+              <p className="">
                 Already have an account?
                 <Link className="ml-1 text-mantis-500" href="/login">
                   Login

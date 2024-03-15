@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BannerComponent = () => {
     return (
-        <section className="md:h-screen items-center flex">
+        <section className="my-24 items-center flex">
             <div className="flex flex-col md:flex-row md:justify-between  items-center max-w-screen-2xl m-auto px-12 py-24 md:p-12">
                 <div className="w-full md:w-1/2">
                     <h1 className="text-7xl w-full font-medium cap">

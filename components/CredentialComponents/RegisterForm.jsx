@@ -42,7 +42,7 @@ export const RegisterForm = () => {
           <p className="text-sm text-red-400 px-2">{errors.email}</p>
         )}
       </div>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-wrap flex-row justify-between">
         <div className="flex flex-col mb-4">
           <h2 className="mb-1 md:text-sm text-2xl text-zinc-500 font-medium">First Name</h2>
           <input

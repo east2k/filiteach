@@ -1,22 +1,34 @@
 "use client";
 
-import { MagnifyingGlassIcon, PlusCircleIcon } from "@heroicons/react/20/solid";
+import {
+    ListBulletIcon,
+    MagnifyingGlassIcon,
+    PlusCircleIcon,
+} from "@heroicons/react/20/solid";
 import { useEffect, useState } from "react";
 import AssignModal from "./AssignModal";
 import useHandleUpdateTeacher from "@/hooks/handlers/useHandleUpdateTeacher";
+import SubjectHistory from "./SubjectHistory";
 
 const subjectList = ["english", "filipino", "math", "science"];
 
 const AssignTeacher = ({ teachers }) => {
     const [showModal, setShowModal] = useState(false);
+    const [showHistory, setShowHistory] = useState(false);
     const [activeSubject, setActiveSubject] = useState("");
     const [chosenUser, setChosenUser] = useState();
     const [teachersList, setTeachersList] = useState([]);
     const [totalList, setTotalList] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    const [displaySubjects, setDisplaySubjects] = useState([]);
 
-    const { updateSubject, updating, updatedTeachers, totalUpdatedTeachers } =
-        useHandleUpdateTeacher();
+    const {
+        updateSubject,
+        updating,
+        updatedTeachers,
+        totalUpdatedTeachers,
+        retrievePreviousSubjects,
+    } = useHandleUpdateTeacher();
 
     useEffect(() => {
         const handleUpdateSubject = async () => {
@@ -45,6 +57,17 @@ const AssignTeacher = ({ teachers }) => {
         setChosenUser(userID);
     };
 
+    const handleCheckHistory = async (userID) => {
+        if (!userID) {
+            setShowHistory(false);
+            return;
+        }
+        setShowHistory(true);
+        const subjects = await retrievePreviousSubjects(userID);
+        console.log(subjects);
+        setDisplaySubjects(subjects);
+    };
+
     const handleRadioChange = (e) => {
         const { value } = e.target;
         setActiveSubject(value);
@@ -66,7 +89,6 @@ const AssignTeacher = ({ teachers }) => {
             user.first_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             user.last_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
     return (
         <div className="relative px-5 py-2 h-full w-full">
             {updating && <h1>Updating</h1>}
@@ -77,6 +99,12 @@ const AssignTeacher = ({ teachers }) => {
                     handleAssignSubject={handleAssignSubject}
                     handleRadioChange={handleRadioChange}
                     handleShowModal={handleShowModal}
+                />
+            )}
+            {showHistory && (
+                <SubjectHistory
+                    handleCheckHistory={handleCheckHistory}
+                    displaySubjects={displaySubjects}
                 />
             )}
             <div className="h-1/3 flex flex-col">
@@ -148,7 +176,10 @@ const AssignTeacher = ({ teachers }) => {
                         Currently Assigned Subject
                     </p>
                     <p className="text-lg col-span-3">Registration Date</p>
-                    <p className="text-lg col-span-2 ml-auto">Assign</p>
+                    <p className="text-lg col-span-1 ml-auto">
+                        Previous Subjects
+                    </p>
+                    <p className="text-lg col-span-1 ml-auto">Assign</p>
                 </div>
                 <div className="max-h-[80%] overflow-auto">
                     {filteredUsers.map((items, index) => {
@@ -172,9 +203,17 @@ const AssignTeacher = ({ teachers }) => {
                                 </p>
                                 <button
                                     onClick={() =>
+                                        handleCheckHistory(items.user_id)
+                                    }
+                                    className="flex ml-auto justify-center items-center mr-8 col-span-1 text-mantis-400 z-20"
+                                >
+                                    <ListBulletIcon width={25} />
+                                </button>
+                                <button
+                                    onClick={() =>
                                         handleShowModal(items.user_id)
                                     }
-                                    className="flex justify-end col-span-2 text-mantis-400"
+                                    className="flex ml-auto justify-end col-span-1 text-mantis-400 z-20"
                                 >
                                     <PlusCircleIcon width={25} />
                                 </button>

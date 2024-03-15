@@ -20,7 +20,7 @@ export const Header = () => {
 
     return (
         <>
-            <header className="absolute flex md:flex-row flex-col gap-20 w-full m-auto py-5 md:px-12 px-7 top-0 left-1/2 -translate-x-1/2 max-w-screen-2xl ">
+            <header className="fixed flex md:flex-row flex-col gap-20 w-full m-auto py-5 md:px-12 px-7 top-0 left-1/2 -translate-x-1/2 max-w-screen-2xl z-20">
                 <Logo />
                 <button
                     onClick={handleToggleNav}
@@ -41,8 +41,8 @@ export const Header = () => {
                     >
                         <XMarkIcon className="w-12 h-12" />
                     </button>
-                    <Navigation />
-                    <div className="flex flex-col md:flex-row gap-5 md:ml-auto my-2">
+                    <Navigation handleToggleNav={handleToggleNav} />
+                    <div className="flex flex-col md:flex-row gap-5 md:ml-auto my-2 h-10">
                         <Link
                             href="/login"
                             className="flex justify-center gap-1 items-center hover:text-600 hover:text-mantis-500 md:text-black text-white"

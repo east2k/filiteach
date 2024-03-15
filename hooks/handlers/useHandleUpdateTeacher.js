@@ -8,7 +8,22 @@ const useHandleUpdateTeacher = () => {
         if (updating) return;
         const { data } = await supabase
             .from("teachers")
-            .update({ subject_assigned: subject })
+            .select(`subject_assigned,previous_subjects`)
+            .eq("user_id", userID);
+        let newArr =
+            data[0]?.previous_subjects === null
+                ? []
+                : data[0]?.previous_subjects;
+        newArr.unshift(data[0]?.subject_assigned);
+
+        await supabase
+            .from("teachers")
+            .update([
+                {
+                    subject_assigned: subject,
+                    previous_subjects: newArr,
+                },
+            ])
             .eq("user_id", userID)
             .select();
         await supabase
@@ -45,7 +60,21 @@ const useHandleUpdateTeacher = () => {
         return formatData;
     };
 
-    return { updateSubject, updating, updatedTeachers, totalUpdatedTeachers };
+    const retrievePreviousSubjects = async (userID) => {
+        const { data } = await supabase
+            .from("teachers")
+            .select("previous_subjects")
+            .eq("user_id", userID);
+        return data[0].previous_subjects;
+    };
+
+    return {
+        updateSubject,
+        updating,
+        updatedTeachers,
+        totalUpdatedTeachers,
+        retrievePreviousSubjects,
+    };
 };
 
 const formatDate = (dateString) => {
