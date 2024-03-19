@@ -8,6 +8,9 @@ const MyCourses = async () => {
     const user = await useGetUser();
     const { getOwnCourses } = await useRetrieveCourses();
     const courses = await getOwnCourses(user.id);
+    if (user.role !== "teacher") {
+        return redirect("/learning");
+    }
     return <OwnMaterials courses={courses} />;
 };
 

@@ -50,16 +50,14 @@ const ExpandCourse = ({ user, data, newData }) => {
                         height={500}
                     />
                 </div>
-                <div className="mt-10 pr-5">
+                {/* <div className="mt-10 pr-5">
                     <div className="border p-4 mb-7">
                         <h1 className="text-2xl font-medium mb-2">
                             What to expect in this course
                         </h1>
                         <ul className="grid grid-cols-2 gap-2">
                             <li className="flex flex-row items-start">
-                                <div className="min-h-fit flex items-center py-1">
-                                    <CheckIcon className="w-5 h-5" />
-                                </div>
+                                <CheckIcon className="w-5 h-5" />
                                 <p className="flex items-center justify-center">
                                     Apple bottom jeans mix with the fur
                                 </p>
@@ -84,7 +82,7 @@ const ExpandCourse = ({ user, data, newData }) => {
                     <div className="border p-4">
                         This course is part of your roadmap!
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="w-1/3">
                 <div className="flex flex-col border shadow-md px-4 py-2 h-full">
@@ -109,16 +107,20 @@ const ExpandCourse = ({ user, data, newData }) => {
                 </div>
             </div>
             <div className="flex flex-col fixed right-5 bottom-5">
-                {(!enrolled && user.role !== "teacher"&& user.role !=="admin") && (
-                    <ExpandCourseButton
-                        enrollCourse={enrollCourse}
-                        newData={newData}
-                        materialId={data.id}
-                        role={user.role}
-                        userId={user.id}
-                    />
-                )}
-                {(enrolled || user.role === "teacher" || user.role ==="admin") && (
+                {!enrolled &&
+                    user.role !== "teacher" &&
+                    user.role !== "admin" && (
+                        <ExpandCourseButton
+                            enrollCourse={enrollCourse}
+                            newData={newData}
+                            materialId={data.id}
+                            role={user.role}
+                            userId={user.id}
+                        />
+                    )}
+                {(enrolled ||
+                    user.role === "teacher" ||
+                    user.role === "admin") && (
                     <Link
                         href={{
                             pathname: `/learning/courses/${data.title}/start`,

@@ -34,15 +34,28 @@ const DashboardUsers = ({ user, courses }) => {
                                 })}
                             </>
                         ) : (
-                            <h1>You have no Learning Materials</h1>
+                            <h1>
+                                {user?.role === "student"
+                                    ? "None yet"
+                                    : "You have no Learning Materials"}
+                            </h1>
                         )}
                     </div>
-                    <Link
-                        className="px-5 py-4 text-white bg-mantis-500 text-center mt-5 ml-auto w-56 rounded-md"
-                        href="/learning/my-courses"
-                    >
-                        Click here for more!
-                    </Link>
+                    {user?.role === "student" ? (
+                        <Link
+                            className="px-5 py-4 text-white bg-mantis-500 text-center mt-5 ml-auto w-56 rounded-md"
+                            href="/learning/courses"
+                        >
+                            Click here for more!
+                        </Link>
+                    ) : (
+                        <Link
+                            className="px-5 py-4 text-white bg-mantis-500 text-center mt-5 ml-auto w-56 rounded-md"
+                            href="/learning/my-courses"
+                        >
+                            Click here for more!
+                        </Link>
+                    )}
                 </div>
                 <div className="mt-5 border border-mantis-500 px-5 py-3">
                     <h1>
@@ -90,7 +103,9 @@ const DashboardUsers = ({ user, courses }) => {
                         </div>
                     ) : (
                         <h1 className="text-center text-2xl">
-                            Make some Learning Materials first
+                            {user?.role === "student"
+                                ? "None"
+                                : "Make some Learning Materials first"}
                         </h1>
                     )}
                 </div>

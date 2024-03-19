@@ -86,7 +86,7 @@ const UsersList = ({ allStudents, allTeachers }) => {
                     </p>
                     <p className="text-lg">
                         {changeTable === "students"
-                            ? "Learning Materials Finished"
+                            ? "Learning Materials Finished (Developing)"
                             : "Learning Materials Made"}
                     </p>
                     <p className="text-lg">Registration Date</p>

@@ -40,7 +40,7 @@ export const studentLinks = [
     //   icon: MapIcon,
     // },
     {
-        name: "Help",
+        name: "Help (Work in Progress)",
         link: "#",
         icon: QuestionMarkCircleIcon,
     },
@@ -67,7 +67,7 @@ export const teachLinks = [
         icon: FolderPlusIcon,
     },
     {
-        name: "Help",
+        name: "Help (Work in Progress)",
         link: "#",
         icon: QuestionMarkCircleIcon,
     },
@@ -105,7 +105,7 @@ export const adminLinks = [
         icon: DocumentChartBarIcon,
     },
     {
-        name: "Help",
+        name: "Help (Work in Progress)",
         link: "#",
         icon: QuestionMarkCircleIcon,
     },

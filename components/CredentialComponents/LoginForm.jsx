@@ -45,7 +45,7 @@ export const LoginForm = () => {
           }`}
           id="password"
           name="password"
-          placeholder="Enter 5 characters or more"
+          placeholder="Enter 6 characters or more"
           type="password"
           value={values.password}
           onChange={handleFormChange}
