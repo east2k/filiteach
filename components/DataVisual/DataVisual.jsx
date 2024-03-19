@@ -113,46 +113,6 @@ const DataVisual = ({ totalStudents, totalTeachers, allCourses }) => {
         ],
         labels: [""],
     };
-
-    const scamContent = {
-        title: "Learning Materials",
-        dataset: [
-            {
-                label: "english",
-                data: [0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 3, 1],
-                backgroundColor: "rgb(115 200 236)",
-            },
-            {
-                label: "filipino",
-                data: [0, 0, 0, 0, 0, 0, 0, 2, 1, 3, 4, 1],
-                backgroundColor: "rgb(204 153 102)",
-            },
-            {
-                label: "math",
-                data: [0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 4, 2],
-                backgroundColor: "rgb(236 115 117)",
-            },
-            {
-                label: "science",
-                data: [0, 0, 0, 0, 0, 0, 0, 4, 2, 3, 1, 5],
-                backgroundColor: "rgb(225 236 115)",
-            },
-        ],
-        labels: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-        ],
-    };
     const filteredMaterialsBarContent = {
         title: `Learning Materials (${selectedMonth || "All"})`,
         dataset: materialsBarContent.dataset.map((subjectData) => {
@@ -202,28 +162,19 @@ const DataVisual = ({ totalStudents, totalTeachers, allCourses }) => {
                             onChange={handleYearChange}
                             className="px-3 py-2 border border-gray-300 rounded-md"
                         >
-                            <option value="" disabled={true}>School Year</option>
-                            <option value="2023">2023-2024</option>
-                            <option value="2024">2024-2025</option>
+                            <option value="" disabled={true}>
+                                Year
+                            </option>
+                            <option value="2023">2024</option>
                         </select>
                     </div>
-                    {selectedYear === "2024" ? (
-                        <BarChart
-                            total={allCourses.length}
-                            barContent={filteredMaterialsBarContent}
-                            chartRef={materialsRef}
-                            handleExportData={handleExportData}
-                            height={200}
-                        />
-                    ) : (
-                        <BarChart
-                            total={allCourses.length}
-                            barContent={scamContent}
-                            chartRef={materialsRef}
-                            handleExportData={handleExportData}
-                            height={200}
-                        />
-                    )}
+                    <BarChart
+                        total={allCourses.length}
+                        barContent={filteredMaterialsBarContent}
+                        chartRef={materialsRef}
+                        handleExportData={handleExportData}
+                        height={200}
+                    />
                 </div>
             </div>
         </div>

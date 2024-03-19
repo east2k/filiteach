@@ -74,7 +74,7 @@ const SideBarToggle = ({ user }) => {
                             href={"/learning/dataset"}
                         >
                             <RectangleStackIcon width={24} />
-                            Add Dataset to Chatbot
+                            Add Data to Chatbot
                         </Link>
                     )}
                     <GPTModal />

@@ -4,7 +4,6 @@ import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import React, { useState } from "react";
 
 const UsersList = ({ allStudents, allTeachers }) => {
-    const [usersList, setUsersList] = useState([]);
     const [changeTable, setChangeTable] = useState("students");
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -104,19 +103,27 @@ const UsersList = ({ allStudents, allTeachers }) => {
                                 </p>{" "}
                                 <p
                                     className={`text-left text-sm capitalize ${
-                                        !items.subject_assigned &&
+                                        ((!items.subject_assigned &&
+                                            changeTable !== "students") ||
+                                            items.materials_enrolled === 0) &&
                                         "text-red-800"
                                     }`}
                                 >
                                     {changeTable === "students"
-                                        ? 0
+                                        ? items?.materials_enrolled
                                         : !items?.subject_assigned
                                         ? "None"
                                         : items.subject_assigned}
                                 </p>
-                                <p className="text-left text-sm">
+                                <p
+                                    className={`text-left text-sm capitalize ${
+                                        changeTable === "students" &&
+                                        items.materials_finished === 0 &&
+                                        "text-red-800"
+                                    }`}
+                                >
                                     {changeTable === "students"
-                                        ? 0
+                                        ? items?.materials_finished
                                         : items?.courses_made}
                                 </p>
                                 <p className="text-left text-sm">
@@ -125,24 +132,6 @@ const UsersList = ({ allStudents, allTeachers }) => {
                             </div>
                         );
                     })}
-                </div>
-                <div className="flex flex-row justify-between items-center gap-2 w-full mt-auto border-t border-mantis-400">
-                    {/* <div className="flex flex-row gap-1">
-                        <p className="w-5 h-5 text-sm text-center rounded-sm bg-mantis-500 text-white">
-                            1
-                        </p>
-                        <p className="w-5 h-5 text-sm text-center rounded-sm bg-mantis-300 text-white">
-                            2
-                        </p>
-                    </div>
-                    <div>
-                        <button className="my-2 bg-mantis-500 text-white px-4 py-1">
-                            Back
-                        </button>
-                        <button className="my-2 bg-mantis-500 text-white px-4 py-1">
-                            Next
-                        </button>
-                    </div> */}
                 </div>
             </div>
         </div>

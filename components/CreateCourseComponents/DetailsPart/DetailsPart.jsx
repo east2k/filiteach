@@ -28,7 +28,7 @@ export const DetailsPart = ({
                 error={errors.description}
             />
             <DetailsInputForm
-                label="Estimated Time to Finish"
+                label="Estimated Time to Finish in minutes"
                 name="score"
                 type="number"
                 value={values.score}
