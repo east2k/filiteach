@@ -1,6 +1,6 @@
 "use server"
 
-import { supabase } from "@/lib/supabase-server";
+import { supabase } from "@/lib/server";
 import { NextResponse } from "next/server";
 
 

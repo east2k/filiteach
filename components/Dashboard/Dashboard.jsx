@@ -13,7 +13,7 @@ const Dashboard = ({
 }) => {
     return (
         <>
-            {user.role === "admin" ? (
+            {user?.role === "admin" ? (
                 <DashboardAdmin
                     recentTeacher={recentTeacher}
                     recentStudents={recentStudents}

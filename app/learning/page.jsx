@@ -21,7 +21,7 @@ export default async function Learning() {
     } = await useHandleRetrieveUsers();
 
     let courses, coursesMade, ownData;
-    if (user.role === "teacher") {
+    if (user?.role === "teacher") {
         coursesMade = await getOwnCourses(user.id);
         ownData = await retrieveOwnData(user.id);
         courses = await getOwnCoursesLimited(user.id);
@@ -30,7 +30,7 @@ export default async function Learning() {
     }
 
     let recentStudents, recentTeacher, allCourses, allStudents, allTeachers;
-    if (user.role === "admin") {
+    if (user?.role === "admin") {
         recentTeacher = await retrieveRecentTeachers();
         recentStudents = await retrieveRecentStudents();
         allStudents = await retrieveAllStudents();
@@ -47,7 +47,7 @@ export default async function Learning() {
                 </div>
             </div>
             <div className="flex flex-col">
-                {user.role === "teacher" && (
+                {user?.role === "teacher" && (
                     <div className="flex flex-col px-7 py-3">
                         <h1 className="text-xl mb-3 font-medium">Statistics</h1>
                         <Stats

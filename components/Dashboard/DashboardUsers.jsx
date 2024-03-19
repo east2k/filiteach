@@ -8,12 +8,12 @@ const DashboardUsers = ({ user, courses }) => {
     return (
         <div className="w-full px-7 py-6">
             <h1 className="text-xl mb-3 font-medium">
-                {user.role === "student"
+                {user?.role === "student"
                     ? "Start Studying now!"
                     : "Learning Materials You Made"}
             </h1>
             <div className="flex flex-col">
-                {user.role === "student" && <p>Recommended for you</p>}
+                {user?.role === "student" && <p>Recommended for you</p>}
                 <div className="flex flex-col border  border-mantis-500 rounded-lg px-3 py-5">
                     <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
                         {courses.length !== 0 ? (
@@ -46,7 +46,7 @@ const DashboardUsers = ({ user, courses }) => {
                 </div>
                 <div className="mt-5 border border-mantis-500 px-5 py-3">
                     <h1>
-                        {user.role === "student"
+                        {user?.role === "student"
                             ? "Latest learning material made"
                             : "Latest learning material you made"}
                     </h1>
