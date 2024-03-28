@@ -74,7 +74,7 @@ const SideBarToggle = ({ user }) => {
                             href={"/learning/dataset"}
                         >
                             <RectangleStackIcon width={24} />
-                            Add Data to Chatbot
+                            Add Data to LoakanBot
                         </Link>
                     )}
                     <GPTModal />

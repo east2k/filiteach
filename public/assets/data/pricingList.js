@@ -6,10 +6,9 @@ export const pricingList = [
         price: "Free",
         label: "Lifetime",
         featuring: [
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
+            "Access to free learning materials",
+            "Access to all subjects",
+            "Access to the Custom Loakan AI ChatBot"
         ],
     },
     {
@@ -19,10 +18,10 @@ export const pricingList = [
         price: "P250",
         label: "Monthly",
         featuring: [
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
+            "Access to free learning materials",
+            "Access to all subjects",
+            "Access to the Custom Loakan AI ChatBot",
+            "Access to the ChatGPT AI",
         ],
     },
     {
@@ -32,10 +31,11 @@ export const pricingList = [
         price: "P1000",
         label: "One Time",
         featuring: [
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
-            "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem",
+            "Access to free learning materials",
+            "Access to all subjects",
+            "Access to the Custom Loakan AI ChatBot",
+            "Access to the ChatGPT AI",
+            "Lifetime access to all the features",
         ],
     },
 ];

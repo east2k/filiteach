@@ -13,11 +13,11 @@ const FeaturesComponent = () => {
             return (
               <div
                 key={index}
-                className="flex md:flex-row flex-col rounded-xl w-3/5 overflow-hidden even:ml-auto h-52"
+                className="flex md:flex-row flex-col rounded-xl w-3/5 overflow-hidden even:ml-auto h-auto"
               >
-                <div className="flex justify-center items-center min-w-max max-w-fit overflow-hidden">
+                <div className="flex justify-center items-center md:h-52 h-64 md:min-w-max md:max-w-fit overflow-hidden">
                   <Image
-                    className="w-full h-auto max-w-xs"
+                    className="object-cover w-full h-auto max-w-xs"
                     src={item.image}
                     alt="Feature Hero"
                     width={200}

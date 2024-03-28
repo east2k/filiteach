@@ -3,6 +3,7 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 
 import { pricingList } from "@/public/assets/data/pricingList";
+import Link from "next/link";
 
 const PricingComponent = () => {
   return (
@@ -40,10 +41,10 @@ const PricingComponent = () => {
                     );
                   })}
                 </ul>
-                <button className="flex flex-row justify-center items-center p-4 py-2 mx-auto mt-5 rounded-xl text-mantis-500 hover:bg-mantis-500 hover:text-white">
+                <Link href="/pricing" className="flex flex-row justify-center items-center p-4 py-2 mx-auto mt-5 rounded-xl text-mantis-500 hover:bg-mantis-500 hover:text-white">
                   Learn More
                   <ChevronRightIcon className="w-5 h-5" />
-                </button>
+                </Link>
               </div>
             );
           })}

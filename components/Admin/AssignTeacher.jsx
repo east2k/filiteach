@@ -165,11 +165,11 @@ const AssignTeacher = ({ teachers }) => {
                         placeholder="Search users..."
                         value={searchQuery}
                         onChange={handleSearch}
-                        className="px-3 py-1 w-11/12 outline-none "
+                        className="px-3 py-1 w-11/12 outline-none"
                         autocomplete="off"
                     />
                 </label>
-                <div className="grid grid-cols-12 border border-mantis-400  px-5 py-2">
+                <div className="grid grid-cols-12 border border-mantis-400 px-5 py-2">
                     <p className="text-lg col-span-1">#</p>
                     <p className="text-lg col-span-3">Name</p>
                     <p className="text-lg col-span-3">

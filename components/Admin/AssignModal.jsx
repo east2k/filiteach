@@ -9,7 +9,7 @@ const AssignModal = ({
     handleShowModal,
 }) => {
     return (
-        <div className="fixed w-full h-full top-0 left-0 bg-gray-400 bg-opacity-50">
+        <div className="fixed w-full h-full top-0 left-0 bg-gray-400 bg-opacity-50 z-10">
             <div className="flex flex-col shadow-md absolute top-1/3 -translate-y-1/2 left-1/2 -translate-x-1/2 px-5 py-3 w-3/5 bg-white border border-mantis-200">
                 <button
                     onClick={()=>handleShowModal()}
@@ -17,9 +17,9 @@ const AssignModal = ({
                 >
                     <XMarkIcon width={20} />
                 </button>
-                <h1 className="text-2xl">Assign John Doe</h1>
+                <h1 className="text-2xl">Assign</h1>
                 <p>Subjects:</p>
-                <div className="flex flex-row justify-between px-5">
+                <div className="flex md:flex-row flex-col justify-between px-5">
                     {subjectList.map((items, index) => {
                         return (
                             <label

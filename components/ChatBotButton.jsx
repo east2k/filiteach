@@ -15,7 +15,7 @@ const ChatBotButton = () => {
             {pathname.includes("quiz") ? (
                 <h1 className="flex flex-row gap-3 items-center text-center p-2 rounded text-red-300">
                     <ExclamationCircleIcon width={24} />
-                    Chatbot disabled during quiz
+                    LoakanBot disabled during quiz
                 </h1>
             ) : (
                 <Link
@@ -23,7 +23,7 @@ const ChatBotButton = () => {
                     href={"/learning/chatbot"}
                 >
                     <ChatBubbleOvalLeftIcon width={24} />
-                    Chatbot
+                    LoakanBot
                 </Link>
             )}
         </>

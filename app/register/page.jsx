@@ -22,7 +22,7 @@ const Register = async () => {
             <div className="text-3xl md:text-xs mt-5 flex flex-row justify-center">
               <p className="">
                 Already have an account?
-                <Link className="ml-1 text-mantis-500" href="/login">
+                <Link className="ml-1 text-mantis-500 text-xl" href="/login">
                   Login
                 </Link>
               </p>

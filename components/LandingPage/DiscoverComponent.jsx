@@ -17,11 +17,11 @@ const DiscoverComponent = () => {
             return (
               <div
                 key={index}
-                className="w-full md:w-1/3 rounded-xl border  px-7 py-5 bg-white"
+                className="w-full md:w-1/3 rounded-xl border px-7 py-5 bg-white"
               >
                 <div className="flex flex-row items-center mb-5">
                   <Image
-                    className="bg-mantis-500 w-9 h-9 rounded-lg"
+                    className="w-9 h-9 rounded-lg border"
                     src={item.image}
                     alt="icon"
                     width={50}
@@ -30,10 +30,6 @@ const DiscoverComponent = () => {
                   <h2 className="ml-5 text-xl font-semibold">{item.name}</h2>
                 </div>
                 <p className="mb-2">{item.content}</p>
-                <button className="flex flex-row justify-center items-center p-4 py-2 ml-auto rounded-xl text-mantis-500">
-                  Learn More
-                  <ChevronRightIcon className="w-5 h-5" />
-                </button>
               </div>
             );
           })}

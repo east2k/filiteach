@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const LearnMoreComponent = () => {
@@ -13,9 +14,9 @@ const LearnMoreComponent = () => {
           <p className="py-7 w-1/2 text-slate-500">
             Reach out to us with the provided link
           </p>
-          <button className="bg-mantis-500 hover:bg-mantis-400 text-white px-5 py-3 rounded-lg">
+          <Link href="/contact" className="bg-mantis-500 hover:bg-mantis-400 text-white px-5 py-3 rounded-lg">
             Learn More
-          </button>
+          </Link>
         </div>
         <div className="flex justify-center items-center w-1/3 h-auto overflow-hidden">
           <Image

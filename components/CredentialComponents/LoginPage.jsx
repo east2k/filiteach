@@ -10,12 +10,13 @@ const LoginPage = () => {
             <div className="max-w-screen-2xl m-auto flex justify-center items-center px-12 py-52 mt-auto flex-row">
                 <div className="w-full lg:w-1/2 flex flex-col">
                     <div className="w-full lg:w-2/3 m-auto px-10 py-7 bg-white rounded-lg shadow-sm">
+                    <h1 className="text-center text-2xl uppercase tracking-wider mb-5">Login</h1>
                         <LoginForm />
                         <div className="text-xs mt-5 flex flex-row justify-center">
                             <p className="text-2xl md:text-base">
                                 Do not have an account yet?
                                 <Link
-                                    className="ml-1 text-mantis-500"
+                                    className="ml-1 text-mantis-500 text-xl"
                                     href="/register"
                                 >
                                     Sign Up

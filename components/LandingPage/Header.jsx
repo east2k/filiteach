@@ -20,7 +20,7 @@ export const Header = () => {
 
     return (
         <>
-            <div className="fixed top-0 left-1/2 -translate-x-1/2 w-screen">
+            <div className="fixed top-0 md:left-1/2 md:-translate-x-1/2 w-screen z-50">
                 <header className="relative flex md:flex-row flex-col justify-between items-center gap-20 w-full m-auto py-5 md:px-12 px-7 max-w-screen-2xl z-20 bg-white">
                     <Logo />
                     <button

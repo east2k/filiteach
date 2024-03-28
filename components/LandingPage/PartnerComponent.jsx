@@ -14,12 +14,12 @@ const PartnerComponent = () => {
         <div className="flex flex-col">
           <Image
             className="w-full max-w-min mx-auto mb-5"
-            src="/assets/images/uc-logo.png"
+            src="/assets/images/school-logo.png"
             alt="UC Logo"
             width={1000}
             height={50}
           />
-          <div className="w-full">
+          {/* <div className="w-full">
             <h2 className="text-center text-3xl font-medium mb-3">
               Meet our Instructors
             </h2>
@@ -90,7 +90,7 @@ const PartnerComponent = () => {
                 );
               })}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
