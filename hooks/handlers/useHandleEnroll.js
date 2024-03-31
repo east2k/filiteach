@@ -17,7 +17,15 @@ const useHandleEnroll = () => {
                 .from("users")
                 .select(`first_name, last_name`)
                 .eq("id", studentId);
+            const { data: enrollAmount } = await supabase
+                .from("students")
+                .select("*")
+                .eq("user_id", studentId);
             const studentName = `${data[0].first_name} ${data[0].last_name}`;
+
+            const totalAmount =
+                parseInt(enrollAmount[0].materials_enrolled) + 1;
+
             await supabase.from("user-enrollment").insert([
                 {
                     student_id: studentId,
@@ -27,6 +35,13 @@ const useHandleEnroll = () => {
                     finished: false,
                 },
             ]);
+
+            await supabase
+                .from("students")
+                .update({
+                    materials_enrolled: totalAmount,
+                })
+                .eq("user_id", studentId);
         }
         setEnrolling(false);
     };
@@ -50,7 +65,12 @@ const useHandleEnroll = () => {
         return userData;
     };
 
-    const updateUserProgress = async (studentId, materialId, newData) => {
+    const updateUserProgress = async (
+        studentId,
+        materialId,
+        newData,
+        nextChapterValidation
+    ) => {
         setUpdating(true);
         await supabase
             .from("user-enrollment")
@@ -58,6 +78,20 @@ const useHandleEnroll = () => {
             .eq("student_id", studentId)
             .eq("material_id", materialId)
             .select();
+        if (nextChapterValidation) {
+            const { data: enrollAmount } = await supabase
+                .from("students")
+                .select("*")
+                .eq("user_id", studentId);
+            const totalAmount =
+                parseInt(enrollAmount[0].materials_finished) + 1;
+            await supabase
+                .from("students")
+                .update({
+                    materials_finished: totalAmount,
+                })
+                .eq("user_id", studentId);
+        }
         setUpdating(false);
     };
     return {

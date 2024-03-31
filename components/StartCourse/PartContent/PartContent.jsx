@@ -58,6 +58,9 @@ export const PartContent = ({
     ]);
 
     const handleFinishChapter = async () => {
+        if (finished || user.role === "teacher" || user.role === "admin") {
+            return;
+        }
         setFinished(true);
         const currentData = objectData[0].course_content.map((oldData) => {
             if (oldData.part === parseInt(part)) {
@@ -69,7 +72,13 @@ export const PartContent = ({
         if (updating) {
             return;
         }
-        updateUserProgress(user.id, courseID, currentData);
+
+        updateUserProgress(
+            user.id,
+            courseID,
+            currentData,
+            nextChapterValidation
+        );
     };
     return (
         <div className="relative p-5 mt-16">
@@ -141,7 +150,7 @@ export const PartContent = ({
                         courseID={courseID}
                         part={part}
                         teacher={teacher}
-                        type={objectData[0].course_content[nextIndex].type}
+                        type={objectData[0]?.course_content[nextIndex].type}
                     />
                 )}
                 <Link

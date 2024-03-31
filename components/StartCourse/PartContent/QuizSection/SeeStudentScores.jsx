@@ -2,7 +2,6 @@ import useHandleQuiz from "@/hooks/handlers/useHandleQuiz";
 import React, { useEffect, useState } from "react";
 
 export const SeeStudentScores = ({ teacher, id, instructor }) => {
-    console.log(instructor);
     const { getAllStudentScores } = useHandleQuiz();
     const [listOfStudents, setListOfStudents] = useState();
     const [currentTeacher, setCurrentTeacher] = useState();
@@ -15,7 +14,6 @@ export const SeeStudentScores = ({ teacher, id, instructor }) => {
         };
         getData();
     }, []);
-    console.log(listOfStudents);
     return (
         <div>
             <h1 className="text-xl my-2">List of students who had the quiz</h1>
@@ -33,7 +31,6 @@ export const SeeStudentScores = ({ teacher, id, instructor }) => {
                                     <div className="ml-auto">Scores</div>
                                 </div>
                                 {listOfStudents.map((item, index) => {
-                                    console.log(item);
                                     return (
                                         <div className="flex flex-row border-b" key={index}>
                                             <div>

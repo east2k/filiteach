@@ -52,7 +52,6 @@ export const CourseParts = ({
 
     const handleChapterAvailability = (chapterIndex) => {
         if (role === "teacher" || role === "admin") {
-            console.log(role);
             return false;
         }
         const check = userProgress[chapterIndex - 1];
