@@ -14,7 +14,6 @@ export const Header = () => {
     const [toggle, setToggle] = useState(false);
 
     const handleToggleNav = () => {
-        console.log(toggle);
         setToggle(!toggle);
     };
 

@@ -64,7 +64,6 @@ const AssignTeacher = ({ teachers }) => {
         }
         setShowHistory(true);
         const subjects = await retrievePreviousSubjects(userID);
-        console.log(subjects);
         setDisplaySubjects(subjects);
     };
 
@@ -91,7 +90,13 @@ const AssignTeacher = ({ teachers }) => {
     );
     return (
         <div className="relative px-5 py-2 h-full w-full">
-            {updating && <h1>Updating</h1>}
+            {updating && (
+                <div className="fixed top-0 left-0 bg-shark-500 bg-opacity-50 w-screen h-screen flex items-center justify-center z-50">
+                    <div className="bg-green-500 flex items-center justify-center">
+                        <h1 className="text-white text-2xl px-2 py-7">Updating</h1>
+                    </div>
+                </div>
+            )}
             {showModal && (
                 <AssignModal
                     activeSubject={activeSubject}

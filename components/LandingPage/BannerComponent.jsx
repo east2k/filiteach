@@ -10,7 +10,7 @@ const BannerComponent = () => {
                     <h1 className="text-7xl w-full font-medium cap">
                         Discover <span className="text-mantis-500">Fun</span>{" "}
                         and <span className="text-mantis-500">Interactive</span>{" "}
-                        Learning for Filipino Kids!
+                        Learning for Filipino Students!
                     </h1>
                     <p className="py-7 w-1/2 text-slate-500">
                         Provides you with learning experience to grow up your

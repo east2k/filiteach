@@ -30,8 +30,8 @@ const SideBarToggle = ({ user }) => {
                     !toggleBar && "hidden"
                 }  flex flex-row justify-center items-center md:hidden fixed w-auto h-10 top-5 right-8 z-30 px-5 py-2 rounded-lg bg-mantis-200`}
             >
-                Open Navigation Here
-                <ArrowRightOnRectangleIcon className="w-10 h-10 rounded" />
+                Close Navigation
+                <ArrowLeftOnRectangleIcon className="w-10 h-10 rounded" />
             </button>
             <button
                 onClick={handleToggleSidebar}
@@ -39,7 +39,7 @@ const SideBarToggle = ({ user }) => {
                     toggleBar && "hidden"
                 }  flex flex-row justify-center items-center md:hidden fixed w-auto h-10 top-5 right-8 z-30 px-5 py-2 rounded-lg bg-mantis-200`}
             >
-                Close Navigation
+                Open Navigation Here
                 <ArrowRightOnRectangleIcon className="w-10 h-10 rounded" />
             </button>
             <div

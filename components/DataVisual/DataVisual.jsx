@@ -53,7 +53,13 @@ const DataVisual = ({ totalStudents, totalTeachers, allCourses }) => {
     const categorizedMaterials = categorizeByMonth(allCourses);
 
     const uniqueSubjects = Array.from(
-        new Set(allCourses.map((course) => course.subject))
+        new Set(
+            allCourses.map(
+                (course) =>
+                    course.subject.charAt(0).toUpperCase() +
+                    course.subject.slice(1)
+            )
+        )
     );
 
     const materialsBarContent = {
@@ -128,6 +134,27 @@ const DataVisual = ({ totalStudents, totalTeachers, allCourses }) => {
             ? [selectedMonth]
             : Object.keys(categorizedMaterials),
     };
+    const handleExportMaterialsData = () => {
+        const chartData = materialsRef.current?.data;
+        if (chartData) {
+            const csvData = convertMaterialsDataToCSV(chartData);
+            const blob = new Blob([csvData], {
+                type: "text/csv;charset=utf-8",
+            });
+            saveAs(blob, "materials-data.csv");
+        }
+    };
+
+    const convertMaterialsDataToCSV = (chartData) => {
+        const { labels, datasets } = chartData;
+        const header = ["Month", ...datasets.map((dataset) => dataset.label)];
+        const rows = labels.map((label, index) => {
+            const values = datasets.map((dataset) => dataset.data[label]);
+            return [label, ...values];
+        });
+        const csvArray = [header, ...rows];
+        return csvArray.map((row) => row.join(",")).join("\n");
+    };
 
     return (
         <div className="">
@@ -142,7 +169,7 @@ const DataVisual = ({ totalStudents, totalTeachers, allCourses }) => {
                         barContent={usersBarContent}
                         chartRef={usersRef}
                         handleExportData={handleExportData}
-                        height={100}
+                        height={150}
                     />
                     <div className="flex flex-row px-5 gap-2">
                         <select
@@ -172,7 +199,7 @@ const DataVisual = ({ totalStudents, totalTeachers, allCourses }) => {
                         total={allCourses.length}
                         barContent={filteredMaterialsBarContent}
                         chartRef={materialsRef}
-                        handleExportData={handleExportData}
+                        handleExportData={handleExportMaterialsData}
                         height={200}
                     />
                 </div>

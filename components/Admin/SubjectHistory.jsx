@@ -14,14 +14,18 @@ const SubjectHistory = ({ handleCheckHistory, displaySubjects }) => {
                 <h1 className="text-2xl">Previous Subjects</h1>
                 <p className="border-b">Latest to Oldest:</p>
                 <ul className="flex flex-col justify-between px-5">
-                    {!displaySubjects ? (
+                    {!displaySubjects[0] ? (
                         <p>No subjects</p>
                     ) : (
                         displaySubjects.map((item, index) => {
                             return (
-                                <li key={index} className="capitalize">
-                                    {index+1}. {item} 
-                                </li>
+                                <>
+                                    {item !== null && (
+                                        <li key={index} className="capitalize">
+                                            {index + 1}. {item}
+                                        </li>
+                                    )}
+                                </>
                             );
                         })
                     )}
