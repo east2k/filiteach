@@ -20,7 +20,9 @@ const validateDetails = (values) => {
     }
 
     if (!values.thumbnail) {
-        errors.thumbnail = "Thumnbnail is empty";
+        errors.thumbnail = "Thumbnail is empty";
+    } else if (!/\.(jpg|jpeg|png)$/i.test(values.thumbnail.name)) {
+        errors.thumbnail = "Thumbnail must be an image file";
     }
 
     return { errors };

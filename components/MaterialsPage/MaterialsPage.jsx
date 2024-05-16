@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import { CoursesContainer } from "../LearningMaterial/CoursesContainer";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { CourseCard } from "../LearningMaterial/CourseCard";
 
-const MaterialsPage = ({ data, featuredCourses }) => {
+const MaterialsPage = ({ data }) => {
     const [currentDisplayed, setCurrentDisplayed] = useState("none");
 
     const handleChangeCourseDisplay = (category) => {
@@ -14,28 +13,6 @@ const MaterialsPage = ({ data, featuredCourses }) => {
 
     return (
         <div className="p-5">
-            {/* <div className="mb-3">
-                <h1 className="text-2xl font-medium tracking-wide">
-                    Start Learning now!
-                </h1>
-                <p className="py-2 text-lg">Most popular right now!</p>
-                <div className="grid grid-cols-5 gap-5 px-5">
-                    {featuredCourses.map((item, index) => {
-                        return (
-                            <CourseCard
-                                key={index}
-                                name={item.subject}
-                                image={item.thumbnail}
-                                title={item.title}
-                                instructor={item.instructor}
-                                score={item.score}
-                                courseID={item.id}
-                                description={item.description}
-                            />
-                        );
-                    })}
-                </div>
-            </div> */}
             <div className="flex flex-col border p-3">
                 {currentDisplayed !== "none" ? (
                     <>

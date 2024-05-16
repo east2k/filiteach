@@ -26,6 +26,7 @@ export const useInsertCourse = (teacherId) => {
                     subject: form.subject,
                     score: form.score,
                     description: form.description,
+                    published: false,
                     thumbnail: `/${form.thumbnail.name}`,
                 },
             ])

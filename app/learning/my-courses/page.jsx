@@ -1,4 +1,3 @@
-import { CourseCard } from "@/components/LearningMaterial/CourseCard";
 import OwnMaterials from "@/components/TeacherSide/OwnMaterials";
 import { useGetUser } from "@/hooks/retrieve/useGetUser";
 import { useRetrieveCourses } from "@/hooks/retrieve/useRetrieveCourses";

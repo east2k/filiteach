@@ -57,9 +57,25 @@ export const useHandleRetrieveUsers = async () => {
         return formatData;
     };
 
-    const refetchData = (action) =>{
+    const retrieveAddedIDs = async () => {
+        const { data: users, error } = await supabase
+            .from("qualified-users")
+            .select("*")
+            .order("id", { ascending: false });
+        return users;
+    };
+
+    const searchCurrentID = async (registerID) => {
+        const { data: users, error } = await supabase
+            .from("qualified-users")
+            .select("*")
+            .eq("user_id", registerID);
+        return users;
+    };
+
+    const refetchData = (action) => {
         return action;
-    }
+    };
 
     return {
         retrieveRecentTeachers,
@@ -68,7 +84,9 @@ export const useHandleRetrieveUsers = async () => {
         retrieveAllStudents,
         retrieveTeachersWithNoSubject,
         retrieveOwnData,
-        refetchData
+        refetchData,
+        retrieveAddedIDs,
+        searchCurrentID,
     };
 };
 

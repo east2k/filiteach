@@ -62,12 +62,24 @@ export const useRetrieveCourses = async () => {
         return coursesWithCDN;
     };
 
+    const getUnpublishedItems = async () => {
+        const { data: courses } = await supabase
+            .from("courses")
+            .select("*")
+            .eq("published", false)
+            .order("id", { ascending: false });
+
+        const coursesWithCDN = courses.map(mapData);
+        return coursesWithCDN;
+    };
+
     return {
         getAllCourses,
         getOneCourse,
         getOwnCourses,
         getLimitedCourses,
         getOwnCoursesLimited,
+        getUnpublishedItems
     };
 };
 

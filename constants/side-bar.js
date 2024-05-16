@@ -1,10 +1,12 @@
 import {
     BookOpenIcon,
     CalendarIcon,
+    CheckBadgeIcon,
     DocumentChartBarIcon,
     FolderIcon,
     FolderPlusIcon,
     MapIcon,
+    PlusCircleIcon,
     QuestionMarkCircleIcon,
     Squares2X2Icon,
     UserGroupIcon,
@@ -39,11 +41,11 @@ export const studentLinks = [
     //   link: "#",
     //   icon: MapIcon,
     // },
-    {
-        name: "Help (Work in Progress)",
-        link: "#",
-        icon: QuestionMarkCircleIcon,
-    },
+    // {
+    //     name: "Help (Work in Progress)",
+    //     link: "#",
+    //     icon: QuestionMarkCircleIcon,
+    // },
 ];
 export const teachLinks = [
     {
@@ -66,11 +68,11 @@ export const teachLinks = [
         link: "/learning/create-course",
         icon: FolderPlusIcon,
     },
-    {
-        name: "Help (Work in Progress)",
-        link: "#",
-        icon: QuestionMarkCircleIcon,
-    },
+    // {
+    //     name: "Help (Work in Progress)",
+    //     link: "#",
+    //     icon: QuestionMarkCircleIcon,
+    // },
 ];
 
 export const adminLinks = [
@@ -95,6 +97,16 @@ export const adminLinks = [
         icon: UserPlusIcon,
     },
     {
+        name: "Add Users",
+        link: "/learning/add-users",
+        icon: PlusCircleIcon,
+    },
+    {
+        name: "Publish Materials",
+        link: "/learning/publish",
+        icon: CheckBadgeIcon,
+    },
+    {
         name: "All Learning Materials",
         link: "/learning/courses",
         icon: BookOpenIcon,
@@ -104,9 +116,9 @@ export const adminLinks = [
         link: "/learning/data-report",
         icon: DocumentChartBarIcon,
     },
-    {
-        name: "Help (Work in Progress)",
-        link: "#",
-        icon: QuestionMarkCircleIcon,
-    },
+    // {
+    //     name: "Help (Work in Progress)",
+    //     link: "#",
+    //     icon: QuestionMarkCircleIcon,
+    // },
 ];

@@ -19,6 +19,7 @@ const DashboardUsers = ({ user, courses }) => {
                         {courses.length !== 0 ? (
                             <>
                                 {courses.map((item, index) => {
+                                    if(!item.published) return;
                                     return (
                                         <CourseCard
                                             key={index}
@@ -29,6 +30,7 @@ const DashboardUsers = ({ user, courses }) => {
                                             score={item.score}
                                             courseID={item.id}
                                             description={item.description}
+                                            published={item.published}
                                         />
                                     );
                                 })}

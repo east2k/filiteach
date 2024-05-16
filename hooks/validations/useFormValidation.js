@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { insert } from "@/auth-actions/insert";
 import { loginUser } from "@/auth-actions/loginUser";
+import { useHandleReadID } from "../retrieve/admin/useHandleReadID";
 
-const validateRegisterForm = (values) => {
+const validateRegisterForm = (values, checker) => {
     let errors = {};
 
     if (!values.email.trim()) {
@@ -20,6 +21,15 @@ const validateRegisterForm = (values) => {
         errors.password = "Password is required";
     } else if (values.password.length < 6) {
         errors.password = "Password must be at least 6 characters";
+    }
+
+    if (values.role === "student") {
+        if (!values.schoolID.trim()) {
+            errors.schoolID = "School ID is required";
+        }
+        if (checker) {
+            errors.schoolID = "School ID is invalid. Check your LRN / School ID on your given ID";
+        }
     }
 
     if (!values.confirmPassword.trim()) {
@@ -54,6 +64,7 @@ export const useFormValidation = (initialState, type) => {
     const [values, setValues] = useState(initialState);
     const [errors, setErrors] = useState({});
     const [submit, setSubmit] = useState(false);
+    const { check } = useHandleReadID();
 
     const handleInsertValues = async () => {
         const result = await insert(values);
@@ -87,7 +98,7 @@ export const useFormValidation = (initialState, type) => {
         }));
     };
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         if (type === "login") {
             const { errors } = validateLoginForm(values);
@@ -96,7 +107,13 @@ export const useFormValidation = (initialState, type) => {
             } else setSubmit(false);
             setErrors(errors);
         } else {
-            const { errors } = validateRegisterForm(values);
+            let checker = false;
+            if (values.role === "student") {
+                if (await check(values.schoolID)) {
+                    checker = true;
+                }
+            }
+            const { errors } = validateRegisterForm(values, checker);
             if (Object.keys(errors).length === 0) {
                 handleInsertValues();
             } else setSubmit(false);

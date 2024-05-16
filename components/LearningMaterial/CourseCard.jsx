@@ -9,7 +9,8 @@ export const CourseCard = ({
     instructor,
     score,
     courseID,
-    description
+    description,
+    published,
 }) => {
     return (
         <Link
@@ -24,9 +25,13 @@ export const CourseCard = ({
                     courseID: courseID,
                 },
             }}
-            className="cursor-pointer flex flex-col shadow-sm hover:shadow-md bg-white rounded-lg p-3"
+            className={`cursor-pointer flex flex-col shadow-sm hover:shadow-md rounded-lg p-3 ${
+                published ? "bg-white" : "bg-red-50"
+            }`}
         >
-            <h1 className="text-xl text-center capitalize font-semibold">{title}</h1>
+            <h1 className="text-xl text-center capitalize font-semibold">
+                {title}
+            </h1>
             <div className="w-auto h-36 overflow-hidden border">
                 <Image
                     className="object-cover w-full h-full"
@@ -36,7 +41,9 @@ export const CourseCard = ({
                     width={450}
                 />
             </div>
-            <h2 className="text-zinc-600 mt-1 font-medium capitalize">{name}</h2>
+            <h2 className="text-zinc-600 mt-1 font-medium capitalize">
+                {name}
+            </h2>
             <p className="text-sm mt-1 truncate">{description}</p>
             <p className="text-zinc-500 mt-auto text-sm">
                 Instructor: {instructor}

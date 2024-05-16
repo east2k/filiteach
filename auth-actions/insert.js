@@ -13,6 +13,7 @@ export const insert = async (form) => {
                 first_name: form.firstName,
                 last_name: form.lastName,
                 role: form.role,
+                school_id: form.schoolID,
             },
         },
     });

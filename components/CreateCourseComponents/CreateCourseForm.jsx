@@ -55,7 +55,7 @@ export const CreateCourseForm = ({
             {isInserting && (
                 <div className="fixed w-full h-full left-0 top-0 bg-gray-400 bg-opacity-50 flex items-center justify-center">
                     <div className="flex flex-row bg-green-500 px-4 py-2 rounded-md item-center justify-center">
-                        <p className="text-white mr-5">Creating</p>
+                        <p className="text-white mr-5">Uploading - Ask admin to publish</p>
                         <Image
                             className="animate-spin"
                             src="/assets/svg/loading.svg"
@@ -69,7 +69,7 @@ export const CreateCourseForm = ({
             {isSubmitting && (
                 <div className="fixed w-full h-full left-0 top-0 bg-gray-400 bg-opacity-50 flex items-center justify-center">
                     <div className="flex flex-row bg-green-500 px-4 py-2 rounded-md item-center justify-center">
-                        <p className="text-white mr-2">Created!</p>
+                        <p className="text-white mr-2">Uploaded!</p>
                         <CheckIcon className="text-white w-4 h-4 m-auto" />
                     </div>
                 </div>

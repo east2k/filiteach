@@ -1,3 +1,4 @@
+import PublishButton from "@/components/Admin/PublishButton";
 import ExpandCourse from "@/components/ExpandCourse/ExpandCourse";
 import { useGetCourseSections } from "@/hooks/retrieve/useGetCourseSections";
 import { useGetUser } from "@/hooks/retrieve/useGetUser";
@@ -9,7 +10,12 @@ const CourseName = async ({ searchParams }) => {
     const data = await getOneCourse(searchParams.courseID);
     const { newData } = await useGetCourseSections(searchParams.courseID);
 
-    return <ExpandCourse user={user} data={data} newData={newData} />;
+    return (
+        <>
+            {!data.published && <PublishButton materialID={data.id} />}
+            <ExpandCourse user={user} data={data} newData={newData} />
+        </>
+    );
 };
 
 export default CourseName;

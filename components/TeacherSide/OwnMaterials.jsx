@@ -26,14 +26,10 @@ const OwnMaterials = ({ courses }) => {
                             : "border-mantis-400 bg-white text-black"
                     }`}
                 >
-                    {
-                        !showArchived
-                            ? "Check archived Materials"
-                            : "Back"
-                    }
+                    {!showArchived ? "Check archived Materials" : "Back"}
                 </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap 4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {courses.length !== 0 ? (
                     <>
                         {courses.map((item, index) => {
@@ -52,6 +48,7 @@ const OwnMaterials = ({ courses }) => {
                                     score={item.score}
                                     courseID={item.id}
                                     description={item.description}
+                                    published={item.published}
                                 />
                             );
                         })}

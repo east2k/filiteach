@@ -77,18 +77,24 @@ const UsersList = ({ allStudents, allTeachers }) => {
                 </label>
             </div>
             <div className="my-2 h-4/5 flex flex-col">
-                <div className="grid grid-cols-4 border border-mantis-400  px-5 py-2">
+                <div className="grid border border-mantis-400  px-5 py-2 grid-cols-5">
+                    {changeTable === "students" && (
+                        <p className="text-lg">School ID</p>
+                    )}
                     <p className="text-lg">Name</p>
                     <p className="text-lg">
                         {changeTable === "students"
-                            ? "Learning Materials Enrolled"
+                            ? "Materials Enrolled"
                             : "Subject Assigned"}
                     </p>
                     <p className="text-lg">
                         {changeTable === "students"
-                            ? "Learning Materials Finished"
-                            : "Learning Materials Made"}
+                            ? "Materials Finished"
+                            : "Materials Created"}
                     </p>
+                    {changeTable === "teachers" && (
+                        <p className="text-lg">Materials Published</p>
+                    )}
                     <p className="text-lg">Registration Date</p>
                 </div>
                 <div className="max-h-[90%] overflow-auto">
@@ -96,11 +102,16 @@ const UsersList = ({ allStudents, allTeachers }) => {
                         return (
                             <div
                                 key={index}
-                                className="grid grid-cols-4 px-5 py-2 border-b border-mantis-200"
+                                className="grid px-5 py-2 border-b border-mantis-200 grid-cols-5"
                             >
+                                {changeTable === "students" && (
+                                    <p className="text-left text-sm">
+                                        {items.school_id}
+                                    </p>
+                                )}
                                 <p className="text-left text-sm">
                                     {items.first_name} {items.last_name}
-                                </p>{" "}
+                                </p>
                                 <p
                                     className={`text-left text-sm capitalize ${
                                         ((!items.subject_assigned &&
@@ -126,6 +137,11 @@ const UsersList = ({ allStudents, allTeachers }) => {
                                         ? items?.materials_finished
                                         : items?.courses_made}
                                 </p>
+                                {changeTable === "teachers" && (
+                                    <p className="text-left text-sm">
+                                        {items?.materials_published}
+                                    </p>
+                                )}
                                 <p className="text-left text-sm">
                                     {items.registration_date}
                                 </p>
